@@ -255,6 +255,40 @@ section.block { padding-block: 72px; border-top: 1px solid var(--line); }
   font-variant-numeric: tabular-nums;
 }
 
+/* Мои работы */
+.works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.work {
+  background: var(--night-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.work:hover { border-color: var(--sky); transform: translateY(-2px); }
+.work-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  min-width: 0;
+}
+.work-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+.work-bar span { margin-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.work-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.work-name { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
+.work-body p { color: var(--muted); font-size: .95rem; flex: 1; }
+.work-tech { font-family: var(--font-mono); font-size: .8rem; color: var(--sky); }
+.work-open { font-weight: 600; color: var(--sun-ink); }
+
 /* Как я работаю */
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
 .steps li { counter-increment: step; display: grid; gap: 12px; align-content: start; }
@@ -332,6 +366,11 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
 }
 
+@media (max-width: 800px) {
+  .nav { display: none; }
+  .lang { margin-left: auto; }
+}
+
 /* ===== Телефон ===== */
 @media (max-width: 640px) {
   .wrap { padding-inline: 16px; }
@@ -341,7 +380,7 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
   section.block { padding-block: 56px; }
   .actions { flex-direction: column; }
   .actions .btn { width: 100%; }
-  .vibe, .services, .steps, .contact-grid { grid-template-columns: 1fr; }
+  .vibe, .services, .works, .steps, .contact-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -352,6 +391,7 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
     <a class="logo" href="#top">Мансур<span>.</span></a>
     <nav class="nav">
       <a href="#services" data-i18n="navServices">Услуги</a>
+      <a href="#works" data-i18n="navWorks">Работы</a>
       <a href="#process" data-i18n="navProcess">Как я работаю</a>
       <a href="#contact" data-i18n="navContact">Связаться</a>
     </nav>
@@ -453,6 +493,39 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
     </div>
   </section>
 
+  <!-- Мои работы -->
+  <section class="block" id="works">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label" data-i18n="worksLabel">Примеры</span>
+        <h2 data-i18n="worksTitle">Мои работы</h2>
+        <p data-i18n="worksText">Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.</p>
+      </div>
+      <div class="works">
+        <a class="work" href="https://sayt-kz.github.io/mountain-coffee-3d/" target="_blank" rel="noopener">
+          <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/mountain-coffee-3d</span></div>
+          <div class="work-body">
+            <span class="label" data-i18n="w1Type">Демо-сайт для кофейни</span>
+            <span class="work-name">TAU ROAST</span>
+            <p data-i18n="w1Text">Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.</p>
+            <span class="work-tech">Three.js · GSAP ScrollTrigger</span>
+            <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+          </div>
+        </a>
+        <a class="work" href="https://sayt-kz.github.io/apex-ai-content-hero/" target="_blank" rel="noopener">
+          <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/apex-ai-content-hero</span></div>
+          <div class="work-body">
+            <span class="label" data-i18n="w2Type">Первый экран для студии</span>
+            <span class="work-name">APEX AI Content</span>
+            <p data-i18n="w2Text">Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.</p>
+            <span class="work-tech">Three.js · GSAP</span>
+            <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Как я работаю -->
   <section class="block" id="process">
     <div class="wrap">
@@ -517,6 +590,7 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
 const texts = {
   ru: {
     navServices: "Услуги",
+    navWorks: "Работы",
     navProcess: "Как я работаю",
     navContact: "Связаться",
     eyebrow: "Вайб-кодинг · Казахстан",
@@ -552,6 +626,14 @@ const texts = {
     priceSite: "от 15 000 ₸",
     priceSiteNote: "До 5 правок включено",
     priceOtherNote: "До 3 правок включено",
+    worksLabel: "Примеры",
+    worksTitle: "Мои работы",
+    worksText: "Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.",
+    w1Type: "Демо-сайт для кофейни",
+    w1Text: "Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.",
+    w2Type: "Первый экран для студии",
+    w2Text: "Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.",
+    workOpen: "Открыть сайт ↗",
     processLabel: "Четыре шага",
     processTitle: "Как я работаю",
     step1: "Вы пишете идею в WhatsApp или Telegram.",
@@ -569,6 +651,7 @@ const texts = {
   },
   kk: {
     navServices: "Қызметтер",
+    navWorks: "Жұмыстар",
     navProcess: "Қалай жұмыс істеймін",
     navContact: "Байланыс",
     eyebrow: "Вайб-кодинг · Қазақстан",
@@ -604,6 +687,14 @@ const texts = {
     priceSite: "15 000 ₸ бастап",
     priceSiteNote: "5 түзетуге дейін кіреді",
     priceOtherNote: "3 түзетуге дейін кіреді",
+    worksLabel: "Мысалдар",
+    worksTitle: "Менің жұмыстарым",
+    worksText: "Бұл сайттарды мен Claude-пен бірге жасадым. Ашып, өзіңіз көріңіз, олар телефонда да жұмыс істейді.",
+    w1Type: "Кофеханаға арналған демо-сайт",
+    w1Text: "Алматыдағы таулы кофенің лендингі. Бетті айналдырғанда банка мен дәндер 3D-де жанданады.",
+    w2Type: "Студияға арналған бірінші экран",
+    w2Text: "AI-бейне және жарнамалық креативтер студиясының бірінші экраны. Сөз тіркестері экранда басылып шығады, ал артында 3D-сахна қозғалады.",
+    workOpen: "Сайтты ашу ↗",
     processLabel: "Төрт қадам",
     processTitle: "Қалай жұмыс істеймін",
     step1: "Сіз идеяңызды WhatsApp немесе Telegram-ға жазасыз.",
