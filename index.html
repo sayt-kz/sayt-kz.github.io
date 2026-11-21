@@ -6,7 +6,7 @@
 <title>Мансур · Сайты от 15 000 ₸ в Казахстане</title>
 <meta name="description" content="Мансур делает сайты, сервисы, Telegram-ботов и игры вместе с ИИ. Сайт от 15 000 ₸, до 5 правок. Пишите в WhatsApp или Telegram.">
 <link rel="canonical" href="https://sayt-kz.github.io/">
-<meta name="theme-color" content="#0d1530">
+<meta name="theme-color" content="#ffffff">
 
 <!-- Превью ссылки в WhatsApp, Telegram, Instagram -->
 <meta property="og:type" content="website">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sayt-kz.github.io/og.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d1530'/%3E%3Ctext x='29' y='46' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%23eef1fb' text-anchor='middle'%3EМ%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%23f6b93b'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1220'/%3E%3Ctext x='29' y='46' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%23ffffff' text-anchor='middle'%3EМ%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%232459e8'/%3E%3C/svg%3E">
 
 <!-- Для поисковиков: кто я, где работаю, контакты -->
 <script type="application/ld+json">
@@ -42,429 +42,447 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Раскладка: колонка ~1120px. Первый экран: крупный заголовок + окно чата как в мессенджере.
-   Под ним бегущая строка услуг, затем работы с живым превью, услуги плиткой, шаги и контакты.
-   Тёмная тема по умолчанию, светлая — если в системе светлая. */
+/* Раскладка: светлая «студийная» страница на сетке. Плавающее меню-таблетка,
+   заголовок по центру, ряд цифр, вкладки услуг с макетами, работы, шаги, тарифы,
+   конструктор заявки, вопросы и большой блок контактов. Колонка ~1160px. */
 
 /* ===== ЦВЕТА: всё здесь. Меняйте значения — меняется весь сайт ===== */
 :root {
-  --night:      #0d1530;  /* фон страницы: ночной синий */
-  --night-2:    #141f42;  /* фон карточек */
-  --night-3:    #1a2752;  /* приподнятые элементы */
-  --line:       #26335e;  /* рамки и разделители */
-  --text:       #eef1fb;  /* основной текст */
-  --muted:      #9aa6cc;  /* второстепенный текст */
-  --sun:        #f6b93b;  /* солнечно-золотой: главные кнопки, цена */
-  --sun-ink:    #f6b93b;  /* золотой для текста */
-  --on-sun:     #1a1404;  /* текст на золотой кнопке */
-  --sky:        #7cc8f8;  /* небесно-голубой: подписи, ссылки */
-  --online:     #3ddc84;  /* зелёная точка «принимаю заказы» */
-  --bubble-in:  #1d2b57;  /* пузырь собеседника */
-  --bubble-out: #2b4a86;  /* пузырь клиента */
-  --glow:       rgba(246, 185, 59, .16);
-  --glow-sky:   rgba(124, 200, 248, .12);
+  --bg:        #ffffff;   /* фон страницы */
+  --bg-soft:   #f5f7fc;   /* фон спокойных блоков */
+  --card:      #ffffff;   /* фон карточек */
+  --line:      #e3e8f2;   /* рамки */
+  --grid:      rgba(15, 23, 42, .055); /* линии сетки на фоне */
+  --text:      #0b1220;   /* основной текст */
+  --muted:     #5b6478;   /* второстепенный текст */
+  --blue:      #2459e8;   /* главный акцент: кнопки, выделения */
+  --blue-ink:  #1d4ed8;   /* синий для текста */
+  --blue-soft: #eaf0ff;   /* светлая подложка под синим */
+  --on-blue:   #ffffff;   /* текст на синей кнопке */
+  --dot:       #f6b93b;   /* золотая точка в логотипе */
+  --ok:        #16a34a;   /* зелёная точка «приём открыт» и галочки */
+  --wa:        #25d366;   /* WhatsApp */
+  --tg:        #2aabee;   /* Telegram */
+  --shadow:    0 1px 2px rgba(15, 23, 42, .04), 0 12px 32px -12px rgba(15, 23, 42, .14);
 
   /* Обложки работ (пока не загрузилось живое превью) */
   --tau-a: #3a2416; --tau-b: #c98a4b; --tau-ink: #fbeedd;
   --apex-a: #05070f; --apex-b: #1f6fb2; --apex-ink: #e8f4ff;
 
-  --font-display: "Unbounded", "Arial Black", system-ui, sans-serif;
-  --font-body:    "Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-mono:    "JetBrains Mono", ui-monospace, "Consolas", monospace;
+  --font-logo: "Unbounded", "Arial Black", sans-serif;
+  --font-body: "Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
 
-  --radius: 18px;
-  color-scheme: dark;
+  --radius: 20px;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --night: #f3f5fb; --night-2: #ffffff; --night-3: #eef2fb; --line: #d7ddef;
-    --text: #111a3a; --muted: #55618a;
-    --sun: #f6b93b; --sun-ink: #a26a00; --on-sun: #1a1404;
-    --sky: #1f6fb2; --online: #17a35a;
-    --bubble-in: #eef2fb; --bubble-out: #d6e6ff;
-    --glow: rgba(246, 185, 59, .25); --glow-sky: rgba(31, 111, 178, .10);
-    color-scheme: light;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0f1e; --bg-soft: #0e1530; --card: #111a33; --line: #222f55;
+    --grid: rgba(255, 255, 255, .045);
+    --text: #eef2fb; --muted: #9aa6c6;
+    --blue: #4f7dff; --blue-ink: #93b2ff; --blue-soft: #18244a; --on-blue: #ffffff;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -16px rgba(0, 0, 0, .6);
+    color-scheme: dark;
   }
 }
-:root[data-theme="light"] {
-  --night: #f3f5fb; --night-2: #ffffff; --night-3: #eef2fb; --line: #d7ddef;
-  --text: #111a3a; --muted: #55618a;
-  --sun: #f6b93b; --sun-ink: #a26a00; --on-sun: #1a1404;
-  --sky: #1f6fb2; --online: #17a35a;
-  --bubble-in: #eef2fb; --bubble-out: #d6e6ff;
-  --glow: rgba(246, 185, 59, .25); --glow-sky: rgba(31, 111, 178, .10);
-  color-scheme: light;
+:root[data-theme="dark"] {
+  --bg: #0a0f1e; --bg-soft: #0e1530; --card: #111a33; --line: #222f55;
+  --grid: rgba(255, 255, 255, .045);
+  --text: #eef2fb; --muted: #9aa6c6;
+  --blue: #4f7dff; --blue-ink: #93b2ff; --blue-soft: #18244a; --on-blue: #ffffff;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -16px rgba(0, 0, 0, .6);
+  color-scheme: dark;
 }
 
 /* ===== База ===== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body {
   margin: 0;
-  background: var(--night);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 44px 44px;
   color: var(--text);
   font: 400 1.0625rem/1.6 var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-a { color: var(--sky); }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; }
+a { color: var(--blue-ink); }
+h1, h2, h3 { line-height: 1.12; text-wrap: balance; margin: 0; font-weight: 800; letter-spacing: -.025em; }
 p { margin: 0; }
-:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 10px; }
 
-.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
-.label {
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--sky);
-}
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 20px; }
+.mono { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+.kicker { color: var(--blue-ink); }
+.hl { color: var(--blue); }
 
-/* ===== Верхняя панель ===== */
-.topbar {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 20;
-  background: color-mix(in srgb, var(--night) 82%, transparent);
-  backdrop-filter: blur(14px) saturate(1.3);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3);
-  border-bottom: 1px solid var(--line);
+/* ===== Плавающее меню ===== */
+.topbar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 40; padding-inline: 12px; }
+.bar {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; gap: 18px;
+  padding: 10px 10px 10px 14px;
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+  backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow);
 }
-.topbar .wrap { display: flex; align-items: center; gap: 24px; height: 66px; }
-.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
-.logo span { color: var(--sun); }
-.nav { display: flex; gap: 22px; margin-left: auto; }
-.nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
-.nav a:hover { color: var(--text); }
-.lang {
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 3px;
-  font-family: var(--font-mono);
-  font-size: .8rem;
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); flex: none; }
+.logo-mark {
+  width: 38px; height: 38px; border-radius: 11px; background: var(--text); color: var(--bg);
+  display: grid; place-items: center; font-family: var(--font-logo); font-size: 1.05rem; position: relative;
 }
-.lang button {
-  border: 0; background: none; color: var(--muted);
-  padding: 5px 11px; border-radius: 999px; cursor: pointer; font: inherit;
+.logo-mark::after { content: ""; position: absolute; right: 6px; bottom: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }
+.logo-text { display: grid; line-height: 1.05; }
+.logo-text b { font-family: var(--font-logo); font-size: .92rem; letter-spacing: .02em; }
+.logo-text small { font-family: var(--font-mono); font-size: .64rem; color: var(--blue-ink); letter-spacing: .1em; text-transform: uppercase; }
+.nav { display: flex; gap: 4px; margin-left: auto; }
+.nav a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; padding: 8px 11px; border-radius: 10px; }
+.nav a:hover { color: var(--text); background: var(--bg-soft); }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; font-family: var(--font-mono); font-size: .76rem; flex: none; }
+.lang button { border: 0; background: none; color: var(--muted); padding: 5px 10px; border-radius: 999px; cursor: pointer; font: inherit; }
+.lang button[aria-pressed="true"] { background: var(--text); color: var(--bg); font-weight: 600; }
+.burger { display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--text); cursor: pointer; flex: none; }
+.burger svg { width: 20px; height: 20px; }
+.menu {
+  display: none; max-width: 1160px; margin: 8px auto 0; padding: 8px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
 }
-.lang button[aria-pressed="true"] { background: var(--sky); color: var(--night); font-weight: 600; }
-.top-cta { min-height: 40px; padding: 0 16px; font-size: .92rem; border-radius: 999px; }
+.menu.open { display: grid; }
+.menu a { padding: 12px 14px; border-radius: 12px; color: var(--text); text-decoration: none; font-weight: 500; }
+.menu a:hover { background: var(--bg-soft); }
 
 /* ===== Кнопки ===== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 54px; padding: 0 26px; border-radius: 14px;
+  min-height: 52px; padding: 0 24px; border-radius: 14px;
   font: 600 1rem var(--font-body); text-decoration: none; cursor: pointer;
-  border: 1px solid transparent;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  border: 1px solid transparent; transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-sun { background: var(--sun); color: var(--on-sun); box-shadow: 0 8px 28px -10px var(--sun); }
-.btn-sun:hover { box-shadow: 0 14px 36px -10px var(--sun); }
-.btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
-.btn-ghost:hover { border-color: var(--sky); }
-.btn svg { width: 20px; height: 20px; flex: none; }
+.btn svg { width: 19px; height: 19px; flex: none; }
+.btn-blue { background: var(--blue); color: var(--on-blue); box-shadow: 0 10px 24px -10px var(--blue); }
+.btn-blue:hover { box-shadow: 0 16px 32px -12px var(--blue); }
+.btn-line { background: var(--card); color: var(--blue-ink); border-color: var(--line); }
+.btn-line:hover { border-color: var(--blue); }
+.btn-sm { min-height: 42px; padding: 0 16px; font-size: .92rem; border-radius: 12px; }
+.btn-wa { background: var(--wa); color: #06341a; }
+.btn-tg { background: var(--tg); color: #04263a; }
 
 /* ===== Первый экран ===== */
-.hero { padding-block: 64px 56px; position: relative; overflow-x: clip; isolation: isolate; }
-.hero::before, .hero::after {
-  content: ""; position: absolute; pointer-events: none; border-radius: 50%; z-index: -1;
+.hero { padding-block: 72px 40px; text-align: center; position: relative; isolation: isolate; overflow-x: clip; }
+.hero::before {
+  content: ""; position: absolute; inset: -40px 0 auto; height: 520px; z-index: -1;
+  background: radial-gradient(60% 60% at 50% 30%, var(--blue-soft), transparent 70%);
 }
-.hero::before { width: 620px; height: 620px; max-width: 90vw; right: -120px; top: -220px; background: radial-gradient(circle, var(--glow), transparent 65%); }
-.hero::after { width: 520px; height: 520px; max-width: 90vw; left: -200px; bottom: -200px; background: radial-gradient(circle, var(--glow-sky), transparent 65%); }
-.hero .wrap {
-  display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center;
+.hero .wrap { display: grid; justify-items: center; gap: 26px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+  padding: 7px 14px 7px 8px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--blue) 25%, var(--line)); background: var(--card);
+  color: var(--blue-ink);
 }
-.hero-text { display: grid; gap: 24px; min-width: 0; justify-items: start; }
-.status {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 7px 14px 7px 10px;
-  border: 1px solid var(--line); border-radius: 999px;
-  background: var(--night-2);
-  font-size: .9rem; color: var(--text);
-}
-.status .ava { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
-.pulse { width: 9px; height: 9px; border-radius: 50%; background: var(--online); position: relative; flex: none; }
-.pulse::after {
-  content: ""; position: absolute; inset: 0; border-radius: 50%;
-  background: var(--online); animation: ping 1.8s ease-out infinite;
-}
+.pill img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
+.live { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); position: relative; flex: none; }
+.live::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--ok); animation: ping 1.8s ease-out infinite; }
 @keyframes ping { from { transform: scale(1); opacity: .7; } to { transform: scale(3); opacity: 0; } }
+.hero h1 { font-size: clamp(2.3rem, 6vw, 4.4rem); max-width: 15em; }
+.hero h1 .hl { white-space: nowrap; }
+.hero .lead { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.2rem); max-width: 40em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 
-.hero h1 { font-size: clamp(2.2rem, 5.4vw, 4.1rem); font-weight: 800; letter-spacing: -.02em; }
-.hero h1 .name { color: var(--sun); display: block; }
-.hero h1 em {
-  font-style: normal;
-  background: linear-gradient(transparent 62%, color-mix(in srgb, var(--sky) 35%, transparent) 62%);
-  padding-inline: .06em;
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; width: 100%;
+  margin-top: 56px; text-align: left;
+  border-top: 1px solid var(--line);
 }
-.lead { color: var(--muted); font-size: 1.15rem; max-width: 34em; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.chips li {
-  font-family: var(--font-mono); font-size: .8rem;
-  padding: 6px 12px; border-radius: 999px;
-  border: 1px solid var(--line); color: var(--muted);
-}
-.chips li.hot { border-color: var(--sun); color: var(--sun-ink); font-weight: 600; }
-
-/* Окно чата */
-.chat {
-  background: var(--night-2);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  overflow: hidden;
-  min-width: 0;
-  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .55);
-}
-.chat-top { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--night-3); }
-.chat-ava { position: relative; flex: none; }
-.chat-ava img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: block; }
-.chat-ava::after {
-  content: ""; position: absolute; right: -1px; bottom: -1px;
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--online); border: 2px solid var(--night-3);
-}
-.chat-who { display: grid; line-height: 1.25; min-width: 0; }
-.chat-who strong { font-weight: 600; }
-.chat-who span { font-size: .82rem; color: var(--muted); }
-.chat-body { padding: 18px; display: grid; gap: 10px; }
-.chat-body .label { justify-self: center; font-size: .7rem; padding: 4px 10px; border-radius: 999px; background: var(--night-3); }
-.bubble { max-width: 88%; padding: 11px 14px; font-size: .97rem; line-height: 1.5; }
-.bubble.out { justify-self: end; background: var(--bubble-out); border-radius: 18px 18px 4px 18px; }
-.bubble.in { justify-self: start; background: var(--bubble-in); border-radius: 18px 18px 18px 4px; }
-.bubble time { display: block; text-align: right; font-family: var(--font-mono); font-size: .7rem; color: var(--muted); margin-top: 4px; }
-.typing { justify-self: start; display: flex; gap: 4px; padding: 12px 14px; background: var(--bubble-in); border-radius: 18px 18px 18px 4px; }
-.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: dot 1.2s infinite ease-in-out; }
-.typing i:nth-child(2) { animation-delay: .15s; }
-.typing i:nth-child(3) { animation-delay: .3s; }
-@keyframes dot { 0%, 60%, 100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
-
-/* ===== Бегущая строка ===== */
-.ticker {
-  border-block: 1px solid var(--line);
-  background: var(--night-2);
-  overflow: hidden;
-  padding-block: 18px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.ticker-track { display: flex; width: max-content; animation: run 38s linear infinite; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
-.ticker-track span {
-  font-family: var(--font-display); font-weight: 500; font-size: clamp(1rem, 2vw, 1.35rem);
-  white-space: nowrap; padding-inline: 22px; display: inline-flex; align-items: center; gap: 44px;
-}
-.ticker-track span::after { content: "✦"; color: var(--sun); font-size: .8em; }
-@keyframes run { to { transform: translateX(-50%); } }
+.stat { padding: 22px 20px 0; display: grid; gap: 4px; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat b { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stat:nth-child(even) b { color: var(--blue); }
+.stat span { color: var(--muted); font-size: .9rem; }
 
 /* ===== Секции ===== */
-section.block { padding-block: 88px; scroll-margin-top: 40px; }
-section.block + section.block { border-top: 1px solid var(--line); }
-.block-head { display: grid; gap: 12px; margin-bottom: 40px; max-width: 42em; }
-.block h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.01em; }
-.block-head p { color: var(--muted); }
+section.block { padding-block: 96px; }
+.head { display: grid; gap: 12px; justify-items: center; text-align: center; margin: 0 auto 44px; max-width: 44em; }
+.head h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+.head p { color: var(--muted); }
+.soft { background: color-mix(in srgb, var(--bg-soft) 85%, transparent); border-block: 1px solid var(--line); }
+
+/* Вкладки услуг */
+.tabs { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.tab {
+  border: 1px solid var(--line); background: var(--card); color: var(--muted);
+  border-radius: 999px; padding: 9px 16px; font: 600 .9rem var(--font-body); cursor: pointer;
+}
+.tab span { font-family: var(--font-mono); font-weight: 400; margin-right: 6px; }
+.tab[aria-selected="true"] { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
+.panel {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 28px;
+  padding: 44px; box-shadow: var(--shadow);
+}
+.panel-text { display: grid; gap: 16px; min-width: 0; }
+.panel-text h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.panel-text p { color: var(--muted); }
+.ticks { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.ticks li { display: flex; gap: 10px; align-items: flex-start; }
+.ticks li::before {
+  content: "✓"; flex: none; width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center; font-size: .75rem; font-weight: 700;
+  background: var(--blue-soft); color: var(--blue-ink); margin-top: 2px;
+}
+
+/* Макеты справа */
+.mock {
+  border: 2px solid var(--blue); border-radius: 22px; padding: 18px; background: var(--bg);
+  display: grid; gap: 12px; min-width: 0; position: relative;
+}
+.mock-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mock-tag { background: var(--blue-soft); color: var(--blue-ink); padding: 4px 10px; border-radius: 999px; }
+.m-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 6px; }
+.m-row { display: flex; justify-content: space-between; gap: 10px; font-size: .92rem; }
+.m-row b { font-variant-numeric: tabular-nums; }
+.m-row + .m-row { border-top: 1px dashed var(--line); padding-top: 6px; }
+.m-btn { background: var(--blue); color: var(--on-blue); border-radius: 12px; text-align: center; padding: 11px; font-weight: 600; font-size: .92rem; }
+.m-btn.wa { background: var(--wa); color: #06341a; }
+.m-note { color: var(--muted); font-size: .82rem; text-align: center; }
+.m-hero { border-radius: 14px; padding: 18px; color: var(--tau-ink); background: radial-gradient(120% 120% at 80% 0%, var(--tau-b), var(--tau-a) 70%); display: grid; gap: 2px; }
+.m-hero b { font-size: 1.3rem; }
+.m-hero small { opacity: .85; }
+.m-field { display: grid; gap: 4px; font-size: .82rem; color: var(--muted); }
+.m-field div { border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; color: var(--text); background: var(--card); font-size: .92rem; }
+.m-total { display: flex; justify-content: space-between; align-items: baseline; }
+.m-total b { font-size: 1.5rem; color: var(--blue); font-variant-numeric: tabular-nums; }
+.m-q { font-weight: 700; font-size: 1.1rem; }
+.m-opts { display: grid; gap: 8px; }
+.m-opt { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--card); display: flex; justify-content: space-between; font-size: .95rem; }
+.m-opt.right { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, var(--card)); }
+.m-opt.right::after { content: "✓"; color: var(--ok); font-weight: 700; }
+.m-progress { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.m-progress i { display: block; height: 100%; width: 60%; background: var(--blue); border-radius: inherit; }
+.m-msg { max-width: 85%; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: var(--card); border: 1px solid var(--line); font-size: .92rem; }
+.m-msg.me { justify-self: end; border-radius: 14px 14px 4px 14px; background: var(--blue-soft); border-color: transparent; }
+.m-keys { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.m-keys span { text-align: center; padding: 9px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); color: var(--blue-ink); font-weight: 600; font-size: .88rem; }
 
 /* Мои работы */
 .works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .work {
-  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; display: flex; flex-direction: column; min-width: 0;
-  text-decoration: none; color: var(--text);
-  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  overflow: hidden; display: flex; flex-direction: column; min-width: 0; text-decoration: none; color: var(--text);
+  transition: border-color .2s ease, transform .2s ease;
 }
-.work:hover { border-color: var(--sky); transform: translateY(-4px); box-shadow: 0 24px 60px -30px var(--sky); }
-.work-bar {
-  display: flex; align-items: center; gap: 6px; padding: 10px 14px;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono); font-size: .76rem; color: var(--muted); min-width: 0;
-}
+.work:hover { border-color: var(--blue); transform: translateY(-4px); }
+.work-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: .74rem; color: var(--muted); min-width: 0; }
 .work-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
 .work-bar span { margin-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shot { position: relative; aspect-ratio: 16 / 10; max-width: 100%; overflow: hidden; }
-.poster {
-  position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 2.6rem);
-  letter-spacing: -.01em; padding: 16px;
-}
-.poster small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin-top: 8px; }
+.poster { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 2.6rem); letter-spacing: -.02em; padding: 16px; }
+.poster small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; margin-top: 8px; }
 .poster.tau { background: radial-gradient(120% 90% at 70% 20%, var(--tau-b), var(--tau-a) 70%); color: var(--tau-ink); }
 .poster.apex { background: radial-gradient(100% 80% at 30% 80%, var(--apex-b), var(--apex-a) 70%); color: var(--apex-ink); }
-.shot iframe {
-  position: absolute; top: 0; left: 0;
-  width: 1280px; height: 800px; border: 0;
-  transform-origin: 0 0; transform: scale(var(--s, .4));
-  pointer-events: none; opacity: 0; transition: opacity .6s ease;
-}
+.shot iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 800px; border: 0; transform-origin: 0 0; transform: scale(var(--s, .4)); pointer-events: none; opacity: 0; transition: opacity .6s ease; }
 .shot iframe.ready { opacity: 1; }
-.work-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.work-name { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
+.work-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.work-name { font-weight: 800; font-size: 1.35rem; letter-spacing: -.02em; }
 .work-body p { color: var(--muted); font-size: .96rem; flex: 1; }
-.work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
-.work-tech { font-family: var(--font-mono); font-size: .78rem; color: var(--sky); }
-.work-open { font-weight: 600; color: var(--sun-ink); }
+.work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 8px; }
+.work-tech { color: var(--muted); }
+.work-open { font-weight: 600; color: var(--blue-ink); }
 
-/* Что такое вайб-кодинг */
-.vibe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.vibe-item { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 2px solid var(--sky); }
-.vibe-item strong { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; }
-.vibe-item p { color: var(--muted); font-size: .98rem; }
+/* Шаги */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: grid; gap: 10px; align-content: start; box-shadow: var(--shadow); }
+.step-n { font-family: var(--font-mono); font-size: 2rem; font-weight: 600; color: var(--blue); line-height: 1; }
+.step h3 { font-size: 1.15rem; letter-spacing: -.01em; }
+.step p { color: var(--muted); font-size: .95rem; }
 
-/* Услуги плиткой */
-.services { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: auto auto; gap: 16px; }
-.service {
-  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0;
-}
-.service h3 { font-size: 1.15rem; font-weight: 700; }
-.service p { color: var(--muted); font-size: .95rem; flex: 1; }
-.price { font-family: var(--font-mono); font-size: .9rem; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); }
-.price-note { font-family: var(--font-mono); font-size: .78rem; color: var(--sky); margin-top: -4px; }
-.service.main {
-  grid-row: span 2;
-  border: 2px solid var(--sun);
-  box-shadow: 0 0 0 6px var(--glow);
-  background:
-    radial-gradient(120% 70% at 100% 0%, var(--glow), transparent 60%),
-    var(--night-2);
-  padding: 30px;
-}
-.service.main h3 { font-size: 1.6rem; font-weight: 800; }
-.service.main p { font-size: 1.02rem; }
-.service.main .price {
-  font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; font-weight: 600;
-  color: var(--sun-ink); border-top-color: var(--sun);
-  font-variant-numeric: tabular-nums;
-}
-.service.main .price-note { font-size: .85rem; }
-.service.main .btn { margin-top: 8px; }
+/* Тарифы */
+.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+.plan { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; position: relative; min-width: 0; box-shadow: var(--shadow); }
+.plan .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.badge { padding: 4px 9px; border-radius: 999px; background: var(--bg-soft); color: var(--muted); border: 1px solid var(--line); }
+.plan h3 { font-size: 1.25rem; letter-spacing: -.01em; }
+.plan > p { color: var(--muted); font-size: .93rem; }
+.plan-price { font-size: 2rem; font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.plan-price.deal { font-size: 1.35rem; padding-block: 6px; }
+.plan .ticks { flex: 1; font-size: .92rem; }
+.plan.hit { border: 2px solid var(--blue); box-shadow: 0 24px 60px -28px var(--blue); }
+.plan.hit .badge.hot { background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
+.plan.hit .plan-price { color: var(--blue); }
+.plan .btn { width: 100%; }
 
-/* Как я работаю */
-.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; position: relative; }
-.steps li { counter-increment: step; display: grid; gap: 14px; align-content: start; position: relative; }
-.steps li::before {
-  content: counter(step);
-  font-family: var(--font-display); font-weight: 800; font-size: 1.1rem;
-  width: 48px; height: 48px; display: grid; place-items: center;
-  border-radius: 50%; border: 2px solid var(--sky); color: var(--sky);
-  background: var(--night);
-  position: relative; z-index: 1;
+/* Конструктор заявки */
+.builder { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: start; }
+.b-form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: grid; gap: 24px; box-shadow: var(--shadow); min-width: 0; }
+.b-step { display: grid; gap: 12px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.b-step legend { font-weight: 700; padding: 0; margin-bottom: 12px; }
+.choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice span {
+  display: flex; align-items: center; gap: 8px; height: 100%;
+  border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; cursor: pointer;
+  font-size: .93rem; background: var(--bg); transition: border-color .15s ease, background-color .15s ease;
 }
-.steps li:not(:last-child)::after {
-  content: ""; position: absolute; top: 24px; left: 56px; right: -12px;
-  border-top: 2px dashed var(--line);
+.choice span::before { content: ""; width: 16px; height: 16px; flex: none; border: 2px solid var(--line); border-radius: 50%; }
+.choice input[type="checkbox"] + span::before { border-radius: 5px; }
+.choice input:checked + span { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-ink); font-weight: 600; }
+.choice input:checked + span::before { border-color: var(--blue); background: var(--blue); box-shadow: inset 0 0 0 3px var(--blue-soft); }
+.choice input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 2px; }
+textarea {
+  width: 100%; min-height: 110px; resize: vertical; border: 1px solid var(--line); border-radius: 14px;
+  padding: 12px 14px; font: inherit; font-size: .98rem; color: var(--text); background: var(--bg);
 }
+textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: transparent; }
+.b-out { background: var(--text); color: var(--bg); border-radius: 24px; padding: 26px; display: grid; gap: 16px; position: sticky; top: 100px; min-width: 0; }
+.b-out .mono { color: color-mix(in srgb, var(--bg) 65%, var(--text)); }
+.b-sum { display: grid; gap: 8px; }
+.b-sum div { display: flex; justify-content: space-between; gap: 12px; font-size: .95rem; border-bottom: 1px solid color-mix(in srgb, var(--bg) 18%, var(--text)); padding-bottom: 8px; }
+.b-sum div span:first-child { opacity: .7; }
+.b-sum div span:last-child { text-align: right; font-weight: 600; }
+.b-price { font-size: 1.9rem; font-weight: 800; letter-spacing: -.02em; }
+.b-msg { background: color-mix(in srgb, var(--bg) 10%, var(--text)); border-radius: 14px 14px 4px 14px; padding: 12px 14px; font-size: .92rem; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 220px; overflow: auto; }
+.b-out .btn { width: 100%; }
+.b-note { font-size: .82rem; opacity: .7; min-height: 1.2em; }
 
-/* Напиши мне */
-.contact { position: relative; overflow: hidden; isolation: isolate; }
-.contact::before {
-  content: ""; position: absolute; left: 50%; top: 40px; width: 760px; height: 760px; max-width: 100vw;
-  transform: translateX(-50%); border-radius: 50%; z-index: -1;
-  background: radial-gradient(circle, var(--glow), transparent 62%);
-}
-.contact h2.big { font-size: clamp(2.8rem, 9vw, 6rem); font-weight: 800; letter-spacing: -.03em; }
-.contact h2.big span { color: var(--sun); }
-.contact .lead { margin-top: 18px; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
-.channel {
-  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 24px; display: grid; gap: 16px; min-width: 0;
-}
-.channel .btn { width: 100%; min-height: 60px; font-size: 1.05rem; }
-.copy-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.copy-value { font-family: var(--font-mono); font-size: 1.1rem; font-variant-numeric: tabular-nums; user-select: all; overflow-wrap: anywhere; }
-.copy-btn {
-  margin-left: auto; border: 1px solid var(--line); background: none; color: var(--sky);
-  border-radius: 10px; padding: 7px 12px; font: 500 .88rem var(--font-body); cursor: pointer;
-}
-.copy-btn:hover { border-color: var(--sky); }
-.copy-note { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
+/* Вопросы */
+.faq { max-width: 820px; margin: 0 auto; display: grid; gap: 10px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 4px 22px; }
+.faq details[open] { border-color: color-mix(in srgb, var(--blue) 40%, var(--line)); }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 700; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-mono); font-size: 1.3rem; color: var(--blue); transition: transform .2s ease; flex: none; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); padding-bottom: 18px; }
 
-/* Подвал */
-footer { border-top: 1px solid var(--line); padding-block: 28px; }
-footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted); }
-
-/* Нижняя панель с кнопками на телефоне */
-.dock {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-  display: none; gap: 10px;
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
-  background: color-mix(in srgb, var(--night) 88%, transparent);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid var(--line);
-  transform: translateY(110%); transition: transform .25s ease;
+/* Контакты */
+.cta {
+  border-radius: 32px; padding: clamp(32px, 6vw, 64px);
+  background: radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--on-blue) 22%, var(--blue)), var(--blue) 60%);
+  color: var(--on-blue); display: grid; gap: 22px; position: relative; overflow: hidden;
 }
-.dock.show { transform: none; }
-.dock .btn { flex: 1; min-height: 48px; padding: 0 12px; }
+.cta h2 { font-size: clamp(2.1rem, 5.6vw, 4rem); max-width: 12em; }
+.cta p { max-width: 36em; opacity: .9; font-size: 1.1rem; }
+.cta .actions { justify-content: flex-start; }
+.cta .btn { min-height: 58px; }
+.copies { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.copy {
+  display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; border-radius: 14px;
+  background: color-mix(in srgb, var(--on-blue) 14%, transparent); border: 1px solid color-mix(in srgb, var(--on-blue) 25%, transparent);
+}
+.copy-value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; user-select: all; }
+.copy-btn { border: 0; border-radius: 10px; padding: 7px 12px; background: var(--on-blue); color: var(--blue-ink); font: 600 .85rem var(--font-body); cursor: pointer; }
+.copy-note { font-size: .88rem; min-height: 1.3em; opacity: .9; }
 
-/* ===== Появление первого экрана ===== */
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.hero-text > *, .chat { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
-.hero-text > :nth-child(2) { animation-delay: .07s; }
-.hero-text > :nth-child(3) { animation-delay: .14s; }
-.hero-text > :nth-child(4) { animation-delay: .21s; }
-.hero-text > :nth-child(5) { animation-delay: .28s; }
-.chat { animation-delay: .3s; }
+footer { padding-block: 32px 40px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: .88rem; }
+
+/* Круглые кнопки в углу */
+.fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 50; display: grid; gap: 10px; }
+.fab a { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, .35); transition: transform .18s ease; }
+.fab a:hover { transform: scale(1.07); }
+.fab svg { width: 26px; height: 26px; }
+.fab .wa { background: var(--wa); color: #fff; }
+.fab .tg { background: var(--tg); color: #fff; }
+
+/* Появление при прокрутке (только если работает скрипт и анимация не отключена) */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero .wrap > * { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+.hero .wrap > :nth-child(2) { animation-delay: .06s; }
+.hero .wrap > :nth-child(3) { animation-delay: .12s; }
+.hero .wrap > :nth-child(4) { animation-delay: .18s; }
+.hero .wrap > :nth-child(5) { animation-delay: .26s; }
+.panel.swap { animation: rise .4s ease both; }
 
 /* ===== «Уменьшить анимацию» ===== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .btn:hover, .work:hover { transform: none; }
-  .ticker-track { flex-wrap: wrap; width: auto; justify-content: center; }
-  .ticker-track span[aria-hidden="true"] { display: none; }
+  .js .reveal { opacity: 1; transform: none; }
+  .btn:hover, .work:hover, .fab a:hover { transform: none; }
 }
 
 /* ===== Планшет ===== */
-@media (max-width: 960px) {
-  .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
-  .chat { max-width: 520px; }
-  .services { grid-template-columns: 1fr 1fr; }
-  .service.main { grid-column: 1 / -1; grid-row: auto; }
-  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
-  .steps li::after { display: none; }
-}
-@media (max-width: 860px) {
+@media (max-width: 1060px) {
   .nav { display: none; }
+  .burger { display: grid; place-items: center; }
   .lang { margin-left: auto; }
+  .plans { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .panel { grid-template-columns: 1fr; padding: 28px; }
+  .builder { grid-template-columns: 1fr; }
+  .b-out { position: static; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 18px; }
 }
 
 /* ===== Телефон ===== */
 @media (max-width: 640px) {
   .wrap { padding-inline: 16px; }
-  .top-cta { display: none; }
-  .hero { padding-block: 36px 48px; }
+  .topbar { padding-inline: 8px; }
+  .bar { gap: 10px; }
+  .logo-text small { display: none; }
+  .top-tg { display: none; }
+  .hero { padding-block: 44px 24px; }
+  .hero h1 .hl { white-space: normal; }
+  .pill { font-size: .62rem; letter-spacing: .04em; gap: 8px; padding-right: 12px; }
   section.block { padding-block: 64px; }
   .actions { flex-direction: column; width: 100%; }
   .actions .btn { width: 100%; }
-  .vibe, .services, .works, .steps, .contact-grid { grid-template-columns: 1fr; }
-  .dock { display: flex; }
-  body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  .works, .plans, .steps { grid-template-columns: 1fr; }
+  .panel { padding: 22px; border-radius: 22px; }
+  .b-form { padding: 20px; }
+  .copy { width: 100%; justify-content: space-between; }
+  .fab a { width: 50px; height: 50px; }
 }
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="wrap">
-    <a class="logo" href="#top">Мансур<span>.</span></a>
+  <div class="bar">
+    <a class="logo" href="#top" aria-label="Мансур">
+      <span class="logo-mark">М</span>
+      <span class="logo-text"><b>МАНСУР</b><small>vibe coding</small></span>
+    </a>
     <nav class="nav">
-      <a href="#works" data-i18n="navWorks">Работы</a>
       <a href="#services" data-i18n="navServices">Услуги</a>
-      <a href="#process" data-i18n="navProcess">Как я работаю</a>
-      <a href="#contact" data-i18n="navContact">Связаться</a>
+      <a href="#works" data-i18n="navWorks">Работы</a>
+      <a href="#process" data-i18n="navProcess">Процесс</a>
+      <a href="#plans" data-i18n="navPlans">Тарифы</a>
+      <a href="#builder" data-i18n="navBuilder">Заявка</a>
+      <a href="#faq" data-i18n="navFaq">Вопросы</a>
     </nav>
     <div class="lang" role="group" aria-label="Язык / Тіл">
       <button type="button" id="lang-ru" data-lang="ru" aria-pressed="true">RU</button>
       <button type="button" id="lang-kk" data-lang="kk" aria-pressed="false">KZ</button>
     </div>
-    <a class="btn btn-sun top-cta" href="#contact" data-i18n="btnWrite">Напиши мне</a>
+    <a class="btn btn-blue btn-sm top-tg" href="https://t.me/arbus33222" target="_blank" rel="noopener">Telegram</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
+  <nav class="menu" id="menu">
+    <a href="#services" data-i18n="navServices">Услуги</a>
+    <a href="#works" data-i18n="navWorks">Работы</a>
+    <a href="#process" data-i18n="navProcess">Процесс</a>
+    <a href="#plans" data-i18n="navPlans">Тарифы</a>
+    <a href="#builder" data-i18n="navBuilder">Заявка</a>
+    <a href="#faq" data-i18n="navFaq">Вопросы</a>
+    <a href="https://t.me/arbus33222" target="_blank" rel="noopener">Telegram ↗</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -472,205 +490,297 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
   <!-- Первый экран -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-text">
-        <span class="status"><img class="ava" src="avatar.jpg" alt="" width="28" height="28"><span class="pulse"></span><span data-i18n="status">Принимаю заказы</span></span>
-        <h1><span class="name">Мансур.</span> <span data-i18n="heroTitle" data-i18n-html>Делаю <em>сайты</em>, сервисы и игры вместе с ИИ.</span></h1>
-        <p class="lead" data-i18n="heroLead">Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро и недорого.</p>
-        <div class="actions">
-          <a class="btn btn-sun" href="#contact" data-i18n="btnWrite">Напиши мне</a>
-          <a class="btn btn-ghost" href="#works" data-i18n="btnWorks">Посмотреть работы</a>
-        </div>
-        <ul class="chips">
-          <li class="hot" data-i18n="chip1">Сайт от 15 000 ₸</li>
-          <li data-i18n="chip2">До 5 правок</li>
-          <li data-i18n="chip3">Работает на телефоне</li>
-        </ul>
+      <span class="pill mono"><img src="avatar.jpg" alt="" width="26" height="26"><span class="live"></span><span data-i18n="pill">Казахстан (UTC+5) · приём заказов открыт</span></span>
+      <h1 data-i18n="heroTitle" data-i18n-html>Сайты, сервисы и игры для бизнеса <span class="hl">с помощью ИИ</span>.</h1>
+      <p class="lead" data-i18n="heroLead">Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро, недорого и без сложных терминов.</p>
+      <div class="actions">
+        <a class="btn btn-blue" href="#builder">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg>
+          <span data-i18n="btnOrder">Заказать проект</span>
+        </a>
+        <a class="btn btn-line" href="#plans" data-i18n="btnPlans">Посмотреть цены</a>
       </div>
-
-      <aside class="chat" aria-labelledby="example-title">
-        <div class="chat-top">
-          <span class="chat-ava"><img src="avatar.jpg" alt="" width="44" height="44"></span>
-          <span class="chat-who"><strong>Мансур</strong><span data-i18n="chatStatus">вайб-кодер · Казахстан</span></span>
-        </div>
-        <div class="chat-body">
-          <span class="label" id="example-title" data-i18n="exampleTitle">Пример: как написать мне</span>
-          <div class="bubble out">
-            <span data-i18n="exampleMsg">Здравствуйте! Нужен сайт для моей кофейни в Алматы. Хочу тёмный стиль, меню с ценами, пару фото и кнопку WhatsApp внизу.</span>
-            <time>10:24</time>
-          </div>
-          <div class="bubble in">
-            <span data-i18n="replyMsg">Здравствуйте! Если нужно, задам пару вопросов и сделаю первую страницу.</span>
-            <time>10:26</time>
-          </div>
-          <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-      </aside>
+      <div class="stats">
+        <div class="stat"><b data-i18n="st1v">15 000 ₸</b><span data-i18n="st1">Сайт под ключ, от</span></div>
+        <div class="stat"><b data-i18n="st2v">до 5</b><span data-i18n="st2">Правок включено в сайт</span></div>
+        <div class="stat"><b>RU + KZ</b><span data-i18n="st3">Сайт на двух языках</span></div>
+        <div class="stat"><b>24/7</b><span data-i18n="st4">Сайт работает без выходных</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Бегущая строка: что можно заказать -->
-  <div class="ticker">
-    <div class="ticker-track" id="ticker"></div>
-  </div>
+  <!-- Услуги вкладками -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="servicesLabel">Что можно заказать</span>
+        <h2 data-i18n="servicesTitle">Что я сделаю для вашего бизнеса</h2>
+        <p data-i18n="servicesText">Выберите, что нужно. Справа пример, как это будет выглядеть у ваших клиентов.</p>
+      </div>
+
+      <div class="tabs reveal" role="tablist" aria-label="Услуги">
+        <button type="button" class="tab" role="tab" id="tab-0" aria-selected="true" aria-controls="panel" data-tab="0"><span>01</span><b data-i18n="t0">Сайт</b></button>
+        <button type="button" class="tab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel" data-tab="1"><span>02</span><b data-i18n="t1">Сервис</b></button>
+        <button type="button" class="tab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel" data-tab="2"><span>03</span><b data-i18n="t2">Игра</b></button>
+        <button type="button" class="tab" role="tab" id="tab-3" aria-selected="false" aria-controls="panel" data-tab="3"><span>04</span><b data-i18n="t3">Telegram-бот</b></button>
+      </div>
+
+      <div class="panel reveal" id="panel" role="tabpanel" aria-labelledby="tab-0">
+        <div class="panel-text">
+          <span class="mono kicker" id="p-kicker"></span>
+          <h3 id="p-title"></h3>
+          <p id="p-text"></p>
+          <ul class="ticks" id="p-ticks"></ul>
+          <div><a class="btn btn-blue btn-sm" href="#builder" data-i18n="btnThis">Хочу так же</a></div>
+        </div>
+
+        <!-- Четыре макета, виден один -->
+        <div class="mock" data-mock="0">
+          <div class="mock-head"><span class="mono kicker">sayt.kz/coffee</span><span class="mono mock-tag" data-i18n="mTagSite">Сайт</span></div>
+          <div class="m-hero"><b data-i18n="mCafe">Кофейня «Тау»</b><small data-i18n="mCafeSub">Алматы · с 8:00 до 22:00</small></div>
+          <div class="m-card">
+            <div class="m-row"><span data-i18n="mItem1">Капучино</span><b>1 200 ₸</b></div>
+            <div class="m-row"><span data-i18n="mItem2">Латте на овсяном</span><b>1 500 ₸</b></div>
+            <div class="m-row"><span data-i18n="mItem3">Чизкейк</span><b>1 800 ₸</b></div>
+          </div>
+          <div class="m-btn wa" data-i18n="mWa">Заказать в WhatsApp</div>
+          <div class="m-note" data-i18n="mNote0">Клиент видит меню и сразу пишет вам</div>
+        </div>
+        <div class="mock" data-mock="1" hidden>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mCalc">Калькулятор доставки</span><span class="mono mock-tag" data-i18n="mTagService">Сервис</span></div>
+          <div class="m-field"><span data-i18n="mFrom">Откуда</span><div data-i18n="mCity1">Алматы</div></div>
+          <div class="m-field"><span data-i18n="mTo">Куда</span><div data-i18n="mCity2">Астана</div></div>
+          <div class="m-field"><span data-i18n="mWeight">Вес посылки</span><div>3 кг</div></div>
+          <div class="m-card m-total"><span data-i18n="mCost">Стоимость</span><b>4 500 ₸</b></div>
+          <div class="m-btn" data-i18n="mSend">Оформить заявку</div>
+          <div class="m-note" data-i18n="mNote1">Пример: цена считается сама, без звонков</div>
+        </div>
+        <div class="mock" data-mock="2" hidden>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mQuiz">Викторина · вопрос 3 из 5</span><span class="mono mock-tag" data-i18n="mTagGame">Игра</span></div>
+          <div class="m-progress"><i></i></div>
+          <div class="m-q" data-i18n="mQuestion">Какой город — столица Казахстана?</div>
+          <div class="m-opts">
+            <div class="m-opt" data-i18n="mCity1">Алматы</div>
+            <div class="m-opt right" data-i18n="mCity2">Астана</div>
+            <div class="m-opt" data-i18n="mCity3">Шымкент</div>
+          </div>
+          <div class="m-card m-total"><span data-i18n="mScore">Очки</span><b>200</b></div>
+          <div class="m-note" data-i18n="mNote2">Играют прямо в браузере, по ссылке</div>
+        </div>
+        <div class="mock" data-mock="3" hidden>
+          <div class="mock-head"><span class="mono kicker">@salon_bot</span><span class="mono mock-tag" data-i18n="mTagBot">Бот</span></div>
+          <div class="m-msg" data-i18n="mBot1">Здравствуйте! Я помогу записаться в салон. Что вас интересует?</div>
+          <div class="m-keys"><span data-i18n="mKey1">Записаться</span><span data-i18n="mKey2">Прайс</span><span data-i18n="mKey3">Адрес</span><span data-i18n="mKey4">Вопрос</span></div>
+          <div class="m-msg me" data-i18n="mMe">Записаться на субботу</div>
+          <div class="m-msg" data-i18n="mBot2">Свободно в 11:00 и 15:30. Какое время удобно?</div>
+          <div class="m-note" data-i18n="mNote3">Заявка сразу приходит вам в Telegram</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Мои работы -->
-  <section class="block" id="works">
+  <section class="block soft" id="works">
     <div class="wrap">
-      <div class="block-head">
-        <span class="label" data-i18n="worksLabel">Примеры</span>
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="worksLabel">Портфолио</span>
         <h2 data-i18n="worksTitle">Мои работы</h2>
         <p data-i18n="worksText">Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.</p>
       </div>
       <div class="works">
-        <a class="work" href="https://sayt-kz.github.io/mountain-coffee-3d/" target="_blank" rel="noopener">
+        <a class="work reveal" href="https://sayt-kz.github.io/mountain-coffee-3d/" target="_blank" rel="noopener">
           <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/mountain-coffee-3d</span></div>
           <div class="shot" data-src="https://sayt-kz.github.io/mountain-coffee-3d/">
             <div class="poster tau">TAU ROAST<small data-i18n="w1Poster">Кофе с высоты 1 800 м</small></div>
           </div>
           <div class="work-body">
-            <span class="label" data-i18n="w1Type">Демо-сайт для кофейни</span>
+            <span class="mono kicker" data-i18n="w1Type">Демо-сайт для кофейни</span>
             <span class="work-name">TAU ROAST</span>
             <p data-i18n="w1Text">Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.</p>
-            <div class="work-foot">
-              <span class="work-tech">Three.js · GSAP ScrollTrigger</span>
-              <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
-            </div>
+            <div class="work-foot"><span class="mono work-tech">Three.js · GSAP</span><span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span></div>
           </div>
         </a>
-        <a class="work" href="https://sayt-kz.github.io/apex-ai-content-hero/" target="_blank" rel="noopener">
+        <a class="work reveal" href="https://sayt-kz.github.io/apex-ai-content-hero/" target="_blank" rel="noopener">
           <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/apex-ai-content-hero</span></div>
           <div class="shot" data-src="https://sayt-kz.github.io/apex-ai-content-hero/">
             <div class="poster apex">APEX<small>AI Content</small></div>
           </div>
           <div class="work-body">
-            <span class="label" data-i18n="w2Type">Первый экран для студии</span>
+            <span class="mono kicker" data-i18n="w2Type">Первый экран для студии</span>
             <span class="work-name">APEX AI Content</span>
             <p data-i18n="w2Text">Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.</p>
-            <div class="work-foot">
-              <span class="work-tech">Three.js · GSAP</span>
-              <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
-            </div>
+            <div class="work-foot"><span class="mono work-tech">Three.js · GSAP</span><span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span></div>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Что такое вайб-кодинг -->
-  <section class="block" id="vibe">
-    <div class="wrap">
-      <div class="block-head">
-        <span class="label" data-i18n="vibeLabel">Коротко</span>
-        <h2 data-i18n="vibeTitle">Что такое вайб-кодинг?</h2>
-        <p data-i18n="vibeText">Код пишет ИИ, а человек им управляет. Поэтому получается быстрее и дешевле, чем в обычной студии.</p>
-      </div>
-      <div class="vibe">
-        <div class="vibe-item">
-          <strong data-i18n="vibe1Title">Код пишет ИИ</strong>
-          <p data-i18n="vibe1Text">Claude набирает разметку, стили и логику по описанию.</p>
-        </div>
-        <div class="vibe-item">
-          <strong data-i18n="vibe2Title">Человек управляет</strong>
-          <p data-i18n="vibe2Text">Я ставлю задачу, проверяю результат и прошу правки.</p>
-        </div>
-        <div class="vibe-item">
-          <strong data-i18n="vibe3Title">Быстрее и дешевле</strong>
-          <p data-i18n="vibe3Text">Не нужна команда разработчиков, поэтому и цена ниже.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Услуги -->
-  <section class="block" id="services">
-    <div class="wrap">
-      <div class="block-head">
-        <span class="label" data-i18n="servicesLabel">Что можно заказать</span>
-        <h2 data-i18n="servicesTitle">Услуги</h2>
-      </div>
-      <div class="services">
-        <article class="service main">
-          <span class="label" data-i18n="s1Label">Главная услуга</span>
-          <h3 data-i18n="s1Title">Сайт</h3>
-          <p data-i18n="s1Text">Визитка, портфолио, лендинг для бизнеса. Работает на компьютере и телефоне.</p>
-          <div class="price" data-i18n="priceSite">от 15 000 ₸</div>
-          <div class="price-note" data-i18n="priceSiteNote">До 5 правок включено</div>
-          <a class="btn btn-sun" id="order-site" href="https://wa.me/77773364268" target="_blank" rel="noopener" data-i18n="btnOrder">Заказать сайт в WhatsApp</a>
-        </article>
-        <article class="service">
-          <h3 data-i18n="s2Title">Сервис</h3>
-          <p data-i18n="s2Text">Калькуляторы, формы, небольшие веб-приложения.</p>
-          <div class="price" data-i18n="priceDeal">по договорённости</div>
-          <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
-        </article>
-        <article class="service">
-          <h3 data-i18n="s3Title">Игра</h3>
-          <p data-i18n="s3Text">Простые браузерные игры: викторины, аркады, головоломки.</p>
-          <div class="price" data-i18n="priceDeal">по договорённости</div>
-          <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
-        </article>
-        <article class="service">
-          <h3 data-i18n="s4Title">Другое</h3>
-          <p data-i18n="s4Text">Всё, что умеет Claude: тексты, таблицы, автоматизация.</p>
-          <div class="price" data-i18n="priceDeal">по договорённости</div>
-          <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
-        </article>
-        <article class="service">
-          <h3 data-i18n="s5Title">Telegram-бот</h3>
-          <p data-i18n="s5Text">Бот для заявок, записи или ответов на частые вопросы.</p>
-          <div class="price" data-i18n="priceDeal">по договорённости</div>
-          <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Как я работаю -->
+  <!-- Процесс -->
   <section class="block" id="process">
     <div class="wrap">
-      <div class="block-head">
-        <span class="label" data-i18n="processLabel">Четыре шага</span>
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="processLabel">Простой процесс</span>
         <h2 data-i18n="processTitle">Как я работаю</h2>
+        <p data-i18n="processText">Четыре шага от вашего сообщения до готового продукта.</p>
       </div>
       <ol class="steps">
-        <li><p data-i18n="step1">Вы пишете идею в WhatsApp или Telegram.</p></li>
-        <li><p data-i18n="step2">Если нужно, я задаю пару вопросов и называю цену.</p></li>
-        <li><p data-i18n="step3">Я делаю первую страницу и показываю вам.</p></li>
-        <li><p data-i18n="step4">Вношу правки: до 5 раз для сайта и до 3 раз для остальных услуг.</p></li>
+        <li class="step reveal"><span class="step-n">01</span><h3 data-i18n="s1h">Вы пишете идею</h3><p data-i18n="step1">Вы пишете идею в WhatsApp или Telegram.</p></li>
+        <li class="step reveal"><span class="step-n">02</span><h3 data-i18n="s2h">Вопросы и цена</h3><p data-i18n="step2">Если нужно, я задаю пару вопросов и называю цену.</p></li>
+        <li class="step reveal"><span class="step-n">03</span><h3 data-i18n="s3h">Первая страница</h3><p data-i18n="step3">Я делаю первую страницу и показываю вам.</p></li>
+        <li class="step reveal"><span class="step-n">04</span><h3 data-i18n="s4h">Правки и запуск</h3><p data-i18n="step4">Вношу правки: до 5 раз для сайта и до 3 раз для остальных услуг.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- Напиши мне -->
-  <section class="block contact" id="contact">
+  <!-- Тарифы -->
+  <section class="block soft" id="plans">
     <div class="wrap">
-      <h2 class="big"><span data-i18n="contactTitle">Напиши мне</span><span>.</span></h2>
-      <p class="lead" data-i18n="contactLead">Опишите идею своими словами, как в примере вверху страницы. Чай уже заварен, жду ваше сообщение.</p>
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="plansLabel">Понятные цены</span>
+        <h2 data-i18n="plansTitle">Честная стоимость без переплат</h2>
+        <p data-i18n="plansText">Нажмите «Выбрать», и тариф сам подставится в заявку ниже.</p>
+      </div>
+      <div class="plans">
+        <article class="plan hit reveal">
+          <div class="badges"><span class="badge hot mono" data-i18n="bHit">Главное</span><span class="badge mono" data-i18n="bSites">Сайты</span></div>
+          <h3 data-i18n="p1t">Сайт</h3>
+          <p data-i18n="p1d">Визитка, портфолио или лендинг для бизнеса.</p>
+          <div class="plan-price" data-i18n="priceSite">от 15 000 ₸</div>
+          <ul class="ticks">
+            <li data-i18n="p1a">Работает на компьютере и телефоне</li>
+            <li data-i18n="p1b">До 5 правок включено</li>
+            <li data-i18n="p1c">Кнопки WhatsApp и Telegram</li>
+            <li data-i18n="p1e">Можно на русском и казахском</li>
+          </ul>
+          <button type="button" class="btn btn-blue" data-pick="site" data-i18n="pick">Выбрать</button>
+        </article>
+        <article class="plan reveal">
+          <div class="badges"><span class="badge mono" data-i18n="bApps">Сервисы</span></div>
+          <h3 data-i18n="p2t">Сервис</h3>
+          <p data-i18n="s2Text">Калькуляторы, формы, небольшие веб-приложения.</p>
+          <div class="plan-price deal" data-i18n="priceDeal">по договорённости</div>
+          <ul class="ticks">
+            <li data-i18n="p2a">Считает цены и сроки за клиента</li>
+            <li data-i18n="p2b">Формы заявок и записи</li>
+            <li data-i18n="p3c">До 3 правок включено</li>
+          </ul>
+          <button type="button" class="btn btn-line" data-pick="service" data-i18n="pick">Выбрать</button>
+        </article>
+        <article class="plan reveal">
+          <div class="badges"><span class="badge mono" data-i18n="bGames">Игры</span></div>
+          <h3 data-i18n="p3t">Игра</h3>
+          <p data-i18n="s3Text">Простые браузерные игры: викторины, аркады, головоломки.</p>
+          <div class="plan-price deal" data-i18n="priceDeal">по договорённости</div>
+          <ul class="ticks">
+            <li data-i18n="p3a">Играют по ссылке, без установки</li>
+            <li data-i18n="p3b">Можно в стиле вашего бренда</li>
+            <li data-i18n="p3c">До 3 правок включено</li>
+          </ul>
+          <button type="button" class="btn btn-line" data-pick="game" data-i18n="pick">Выбрать</button>
+        </article>
+        <article class="plan reveal">
+          <div class="badges"><span class="badge mono" data-i18n="bBots">Боты</span></div>
+          <h3 data-i18n="p4t">Telegram-бот и другое</h3>
+          <p data-i18n="p4d">Бот для заявок или всё, что умеет Claude: тексты, таблицы, автоматизация.</p>
+          <div class="plan-price deal" data-i18n="priceDeal">по договорённости</div>
+          <ul class="ticks">
+            <li data-i18n="p4a">Принимает заявки и записи</li>
+            <li data-i18n="p4b">Отвечает на частые вопросы</li>
+            <li data-i18n="p3c">До 3 правок включено</li>
+          </ul>
+          <button type="button" class="btn btn-line" data-pick="bot" data-i18n="pick">Выбрать</button>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <div class="contact-grid">
-        <div class="channel">
-          <a class="btn btn-sun" href="https://wa.me/77773364268" target="_blank" rel="noopener">
+  <!-- Конструктор заявки -->
+  <section class="block" id="builder">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="bLabel">Заявка за минуту</span>
+        <h2 data-i18n="bTitle">Соберите сообщение мне</h2>
+        <p data-i18n="bText">Отметьте, что нужно, и добавьте пару слов об идее. Готовое сообщение отправится в WhatsApp одним нажатием.</p>
+      </div>
+      <div class="builder">
+        <form class="b-form reveal" id="b-form" novalidate>
+          <fieldset class="b-step">
+            <legend data-i18n="bStep1">1. Что нужно сделать?</legend>
+            <div class="choices" id="b-types"></div>
+          </fieldset>
+          <fieldset class="b-step">
+            <legend data-i18n="bStep2">2. Что важно? (можно несколько)</legend>
+            <div class="choices" id="b-opts"></div>
+          </fieldset>
+          <div class="b-step">
+            <label for="b-idea"><b data-i18n="bStep3">3. Пара слов об идее</b></label>
+            <textarea id="b-idea" data-i18n-placeholder="bPlaceholder" placeholder="Например: кофейня в Алматы, хочу тёмный стиль и меню с ценами"></textarea>
+          </div>
+        </form>
+
+        <aside class="b-out reveal" aria-live="polite">
+          <span class="mono" data-i18n="bOutLabel">Ваша заявка</span>
+          <div class="b-sum">
+            <div><span data-i18n="bType">Тип</span><span id="o-type"></span></div>
+            <div><span data-i18n="bEdits">Правки</span><span id="o-edits"></span></div>
+          </div>
+          <div><span class="mono" data-i18n="bPrice">Цена</span><div class="b-price" id="o-price"></div></div>
+          <div class="b-msg" id="o-msg"></div>
+          <a class="btn btn-wa" id="o-wa" href="https://wa.me/77773364268" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            <span data-i18n="bSendWa">Отправить в WhatsApp</span>
+          </a>
+          <a class="btn btn-tg" id="o-tg" href="https://t.me/arbus33222" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg>
+            <span data-i18n="bSendTg">Скопировать и открыть Telegram</span>
+          </a>
+          <div class="b-note" id="o-note"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вопросы -->
+  <section class="block soft" id="faq">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="mono kicker" data-i18n="faqLabel">Вопросы</span>
+        <h2 data-i18n="faqTitle">Часто спрашивают</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open><summary data-i18n="q1">Сколько стоит сайт?</summary><p data-i18n="a1">Сайт стоит от 15 000 ₸. Сервис, игру или бота оцениваю после короткого разговора, когда понятна задача.</p></details>
+        <details class="reveal"><summary data-i18n="q2">Сколько правок входит в цену?</summary><p data-i18n="a2">До 5 правок для сайта и до 3 для остальных услуг.</p></details>
+        <details class="reveal"><summary data-i18n="q3">Что нужно от меня?</summary><p data-i18n="a3">Опишите идею своими словами. Если есть фото, логотип или тексты, пришлите их. Если чего-то нет, подскажу, что подойдёт.</p></details>
+        <details class="reveal"><summary data-i18n="q4">Где будет находиться сайт?</summary><p data-i18n="a4">Могу бесплатно разместить сайт на GitHub Pages. Если хотите свой адрес, например name.kz, домен покупаете вы, а я подключаю его к сайту.</p></details>
+        <details class="reveal"><summary data-i18n="q5">Что такое вайб-кодинг?</summary><p data-i18n="a5">Код пишет ИИ (Claude), а я ставлю задачу, проверяю результат и прошу правки. Поэтому получается быстрее и дешевле, чем в обычной студии.</p></details>
+        <details class="reveal"><summary data-i18n="q6">Можно сайт на казахском?</summary><p data-i18n="a6">Да. Сайт может быть на русском, на казахском или сразу на двух языках, как этот.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="mono" data-i18n="ctaLabel">Связаться</span>
+        <h2 data-i18n="ctaTitle">Готовы запустить ваш проект?</h2>
+        <p data-i18n="contactLead">Опишите идею своими словами, как в примере выше. Чай уже заварен, жду ваше сообщение.</p>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/77773364268" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
             <span data-i18n="btnWhatsapp">Написать в WhatsApp</span>
           </a>
-          <div class="copy-row">
-            <span class="copy-value" id="phone">+7 777 336 42 68</span>
-            <button type="button" class="copy-btn" id="copy-phone" data-copy="phone" data-i18n="copy">Скопировать</button>
-          </div>
-          <div class="copy-note" id="note-phone" aria-live="polite"></div>
-        </div>
-
-        <div class="channel">
-          <a class="btn btn-sun" href="https://t.me/arbus33222" target="_blank" rel="noopener">
+          <a class="btn btn-tg" href="https://t.me/arbus33222" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg>
             <span data-i18n="btnTelegram">Написать в Telegram</span>
           </a>
-          <div class="copy-row">
-            <span class="copy-value" id="nick">@arbus33222</span>
-            <button type="button" class="copy-btn" id="copy-nick" data-copy="nick" data-i18n="copy">Скопировать</button>
-          </div>
-          <div class="copy-note" id="note-nick" aria-live="polite"></div>
         </div>
+        <div class="copies">
+          <span class="copy"><span class="copy-value" id="phone">+7 777 336 42 68</span><button type="button" class="copy-btn" data-copy="phone" data-i18n="copy">Скопировать</button></span>
+          <span class="copy"><span class="copy-value" id="nick">@arbus33222</span><button type="button" class="copy-btn" data-copy="nick" data-i18n="copy">Скопировать</button></span>
+        </div>
+        <div class="copy-note" id="copy-note" aria-live="polite"></div>
       </div>
     </div>
   </section>
@@ -679,15 +789,19 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
 
 <footer>
   <div class="wrap">
-    <p data-i18n="footer">© 2026 Мансур · Сделано с помощью вайб-кодинга</p>
-    <p>sayt-kz.github.io</p>
+    <span data-i18n="footer">© 2026 Мансур · Сделано с помощью вайб-кодинга</span>
+    <span>sayt-kz.github.io</span>
   </div>
 </footer>
 
-<!-- Кнопки внизу экрана на телефоне -->
-<div class="dock" id="dock">
-  <a class="btn btn-sun" href="https://wa.me/77773364268" target="_blank" rel="noopener">WhatsApp</a>
-  <a class="btn btn-ghost" href="https://t.me/arbus33222" target="_blank" rel="noopener">Telegram</a>
+<!-- Круглые кнопки в углу -->
+<div class="fab">
+  <a class="wa" href="https://wa.me/77773364268" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+  <a class="tg" href="https://t.me/arbus33222" target="_blank" rel="noopener" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg>
+  </a>
 </div>
 
 <script>
@@ -695,25 +809,50 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
 // Чтобы поменять текст: найдите его ключ в атрибуте data-i18n и поправьте строку в texts.ru и texts.kk.
 const texts = {
   ru: {
-    navWorks: "Работы",
-    navServices: "Услуги",
-    navProcess: "Как я работаю",
-    navContact: "Связаться",
-    status: "Принимаю заказы",
-    heroTitle: "Делаю <em>сайты</em>, сервисы и игры вместе с ИИ.",
-    heroLead: "Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро и недорого.",
-    btnWrite: "Напиши мне",
-    btnWorks: "Посмотреть работы",
-    chip1: "Сайт от 15 000 ₸",
-    chip2: "До 5 правок",
-    chip3: "Работает на телефоне",
-    chatStatus: "вайб-кодер · Казахстан",
-    exampleTitle: "Пример: как написать мне",
-    exampleMsg: "Здравствуйте! Нужен сайт для моей кофейни в Алматы. Хочу тёмный стиль, меню с ценами, пару фото и кнопку WhatsApp внизу.",
-    replyMsg: "Здравствуйте! Если нужно, задам пару вопросов и сделаю первую страницу.",
-    ticker: ["Лендинги", "Сайты-визитки", "Портфолио", "Telegram-боты", "Калькуляторы", "Браузерные игры", "3D-сайты", "Формы заявок"],
-    worksLabel: "Примеры",
-    worksTitle: "Мои работы",
+    navServices: "Услуги", navWorks: "Работы", navProcess: "Процесс", navPlans: "Тарифы", navBuilder: "Заявка", navFaq: "Вопросы",
+    pill: "Казахстан (UTC+5) · приём заказов открыт",
+    heroTitle: 'Сайты, сервисы и игры для бизнеса <span class="hl">с помощью ИИ</span>.',
+    heroLead: "Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро, недорого и без сложных терминов.",
+    btnOrder: "Заказать проект", btnPlans: "Посмотреть цены",
+    st1v: "15 000 ₸", st1: "Сайт под ключ, от",
+    st2v: "до 5", st2: "Правок включено в сайт",
+    st3: "Сайт на двух языках",
+    st4: "Сайт работает без выходных",
+
+    servicesLabel: "Что можно заказать",
+    servicesTitle: "Что я сделаю для вашего бизнеса",
+    servicesText: "Выберите, что нужно. Справа пример, как это будет выглядеть у ваших клиентов.",
+    t0: "Сайт", t1: "Сервис", t2: "Игра", t3: "Telegram-бот",
+    btnThis: "Хочу так же",
+    panels: [
+      { kicker: "01 // Сайт для бизнеса", title: "Сайт, который приводит клиентов",
+        text: "Визитка, портфолио или лендинг. Клиент открывает сайт с телефона, видит цены и сразу пишет вам.",
+        ticks: ["Визитка, портфолио или лендинг", "Удобно смотреть с телефона и компьютера", "Кнопки WhatsApp и Telegram, чтобы клиенты сразу писали"] },
+      { kicker: "02 // Сервис", title: "Сервис, который экономит время",
+        text: "Калькулятор, форма или небольшое веб-приложение делают рутину за вас и ваших клиентов.",
+        ticks: ["Калькуляторы цен и доставки", "Формы заявок и записи", "Небольшие веб-приложения под вашу задачу"] },
+      { kicker: "03 // Игра", title: "Игра, в которую хочется вернуться",
+        text: "Викторина, аркада или головоломка в браузере. Подходит для бренда, урока или просто для удовольствия.",
+        ticks: ["Викторины для бренда или урока", "Аркады и головоломки", "Работает без установки, по ссылке"] },
+      { kicker: "04 // Telegram-бот", title: "Бот, который отвечает за вас",
+        text: "Telegram-бот принимает заявки, отвечает на частые вопросы и пересылает всё вам.",
+        ticks: ["Принимает заявки и записи", "Отвечает на частые вопросы", "Присылает заявки вам в Telegram"] }
+    ],
+    mTagSite: "Сайт", mTagService: "Сервис", mTagGame: "Игра", mTagBot: "Бот",
+    mCafe: "Кофейня «Тау»", mCafeSub: "Алматы · с 8:00 до 22:00",
+    mItem1: "Капучино", mItem2: "Латте на овсяном", mItem3: "Чизкейк",
+    mWa: "Заказать в WhatsApp", mNote0: "Клиент видит меню и сразу пишет вам",
+    mCalc: "Калькулятор доставки", mFrom: "Откуда", mTo: "Куда", mWeight: "Вес посылки",
+    mCity1: "Алматы", mCity2: "Астана", mCity3: "Шымкент",
+    mCost: "Стоимость", mSend: "Оформить заявку", mNote1: "Пример: цена считается сама, без звонков",
+    mQuiz: "Викторина · вопрос 3 из 5", mQuestion: "Какой город — столица Казахстана?", mScore: "Очки",
+    mNote2: "Играют прямо в браузере, по ссылке",
+    mBot1: "Здравствуйте! Я помогу записаться в салон. Что вас интересует?",
+    mKey1: "Записаться", mKey2: "Прайс", mKey3: "Адрес", mKey4: "Вопрос",
+    mMe: "Записаться на субботу", mBot2: "Свободно в 11:00 и 15:30. Какое время удобно?",
+    mNote3: "Заявка сразу приходит вам в Telegram",
+
+    worksLabel: "Портфолио", worksTitle: "Мои работы",
     worksText: "Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.",
     w1Poster: "Кофе с высоты 1 800 м",
     w1Type: "Демо-сайт для кофейни",
@@ -721,69 +860,100 @@ const texts = {
     w2Type: "Первый экран для студии",
     w2Text: "Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.",
     workOpen: "Открыть сайт ↗",
-    vibeLabel: "Коротко",
-    vibeTitle: "Что такое вайб-кодинг?",
-    vibeText: "Код пишет ИИ, а человек им управляет. Поэтому получается быстрее и дешевле, чем в обычной студии.",
-    vibe1Title: "Код пишет ИИ",
-    vibe1Text: "Claude набирает разметку, стили и логику по описанию.",
-    vibe2Title: "Человек управляет",
-    vibe2Text: "Я ставлю задачу, проверяю результат и прошу правки.",
-    vibe3Title: "Быстрее и дешевле",
-    vibe3Text: "Не нужна команда разработчиков, поэтому и цена ниже.",
-    servicesLabel: "Что можно заказать",
-    servicesTitle: "Услуги",
-    s1Label: "Главная услуга",
-    s1Title: "Сайт",
-    s1Text: "Визитка, портфолио, лендинг для бизнеса. Работает на компьютере и телефоне.",
-    s2Title: "Сервис",
-    s2Text: "Калькуляторы, формы, небольшие веб-приложения.",
-    s3Title: "Игра",
-    s3Text: "Простые браузерные игры: викторины, аркады, головоломки.",
-    s4Title: "Другое",
-    s4Text: "Всё, что умеет Claude: тексты, таблицы, автоматизация.",
-    s5Title: "Telegram-бот",
-    s5Text: "Бот для заявок, записи или ответов на частые вопросы.",
-    priceDeal: "по договорённости",
-    priceSite: "от 15 000 ₸",
-    priceSiteNote: "До 5 правок включено",
-    priceOtherNote: "До 3 правок включено",
-    btnOrder: "Заказать сайт в WhatsApp",
-    orderText: "Здравствуйте, Мансур! Хочу заказать сайт.",
-    processLabel: "Четыре шага",
-    processTitle: "Как я работаю",
-    step1: "Вы пишете идею в WhatsApp или Telegram.",
-    step2: "Если нужно, я задаю пару вопросов и называю цену.",
-    step3: "Я делаю первую страницу и показываю вам.",
-    step4: "Вношу правки: до 5 раз для сайта и до 3 раз для остальных услуг.",
-    contactTitle: "Напиши мне",
-    contactLead: "Опишите идею своими словами, как в примере вверху страницы. Чай уже заварен, жду ваше сообщение.",
-    btnWhatsapp: "Написать в WhatsApp",
-    btnTelegram: "Написать в Telegram",
-    copy: "Скопировать",
-    copied: "Скопировано",
+
+    processLabel: "Простой процесс", processTitle: "Как я работаю",
+    processText: "Четыре шага от вашего сообщения до готового продукта.",
+    s1h: "Вы пишете идею", step1: "Вы пишете идею в WhatsApp или Telegram.",
+    s2h: "Вопросы и цена", step2: "Если нужно, я задаю пару вопросов и называю цену.",
+    s3h: "Первая страница", step3: "Я делаю первую страницу и показываю вам.",
+    s4h: "Правки и запуск", step4: "Вношу правки: до 5 раз для сайта и до 3 раз для остальных услуг.",
+
+    plansLabel: "Понятные цены", plansTitle: "Честная стоимость без переплат",
+    plansText: "Нажмите «Выбрать», и тариф сам подставится в заявку ниже.",
+    bHit: "Главное", bSites: "Сайты", bApps: "Сервисы", bGames: "Игры", bBots: "Боты",
+    p1t: "Сайт", p1d: "Визитка, портфолио или лендинг для бизнеса.",
+    p1a: "Работает на компьютере и телефоне", p1b: "До 5 правок включено", p1c: "Кнопки WhatsApp и Telegram", p1e: "Можно на русском и казахском",
+    p2t: "Сервис", s2Text: "Калькуляторы, формы, небольшие веб-приложения.",
+    p2a: "Считает цены и сроки за клиента", p2b: "Формы заявок и записи",
+    p3t: "Игра", s3Text: "Простые браузерные игры: викторины, аркады, головоломки.",
+    p3a: "Играют по ссылке, без установки", p3b: "Можно в стиле вашего бренда", p3c: "До 3 правок включено",
+    p4t: "Telegram-бот и другое", p4d: "Бот для заявок или всё, что умеет Claude: тексты, таблицы, автоматизация.",
+    p4a: "Принимает заявки и записи", p4b: "Отвечает на частые вопросы",
+    priceSite: "от 15 000 ₸", priceDeal: "по договорённости", pick: "Выбрать",
+
+    bLabel: "Заявка за минуту", bTitle: "Соберите сообщение мне",
+    bText: "Отметьте, что нужно, и добавьте пару слов об идее. Готовое сообщение отправится в WhatsApp одним нажатием.",
+    bStep1: "1. Что нужно сделать?", bStep2: "2. Что важно? (можно несколько)", bStep3: "3. Пара слов об идее",
+    bPlaceholder: "Например: кофейня в Алматы, хочу тёмный стиль и меню с ценами",
+    types: { site: "Сайт", service: "Сервис", game: "Игра", bot: "Telegram-бот", other: "Другое" },
+    opts: { menu: "Меню или прайс", gallery: "Галерея фото", form: "Форма заявки", langs: "Два языка: RU и KZ", motion: "3D и анимация", wa: "Кнопка WhatsApp" },
+    bOutLabel: "Ваша заявка", bType: "Тип", bEdits: "Правки", bPrice: "Цена",
+    edits5: "до 5", edits3: "до 3",
+    bSendWa: "Отправить в WhatsApp", bSendTg: "Скопировать и открыть Telegram",
+    bCopied: "Сообщение скопировано. Вставьте его в чат Telegram.",
+    bCopyFail: "Не получилось скопировать. Выделите текст сообщения и скопируйте вручную.",
+    msgHello: "Здравствуйте, Мансур!", msgNeed: "Нужен", msgImportant: "Что важно", msgIdea: "Идея",
+
+    faqLabel: "Вопросы", faqTitle: "Часто спрашивают",
+    q1: "Сколько стоит сайт?", a1: "Сайт стоит от 15 000 ₸. Сервис, игру или бота оцениваю после короткого разговора, когда понятна задача.",
+    q2: "Сколько правок входит в цену?", a2: "До 5 правок для сайта и до 3 для остальных услуг.",
+    q3: "Что нужно от меня?", a3: "Опишите идею своими словами. Если есть фото, логотип или тексты, пришлите их. Если чего-то нет, подскажу, что подойдёт.",
+    q4: "Где будет находиться сайт?", a4: "Могу бесплатно разместить сайт на GitHub Pages. Если хотите свой адрес, например name.kz, домен покупаете вы, а я подключаю его к сайту.",
+    q5: "Что такое вайб-кодинг?", a5: "Код пишет ИИ (Claude), а я ставлю задачу, проверяю результат и прошу правки. Поэтому получается быстрее и дешевле, чем в обычной студии.",
+    q6: "Можно сайт на казахском?", a6: "Да. Сайт может быть на русском, на казахском или сразу на двух языках, как этот.",
+
+    ctaLabel: "Связаться", ctaTitle: "Готовы запустить ваш проект?",
+    contactLead: "Опишите идею своими словами, как в примере выше. Чай уже заварен, жду ваше сообщение.",
+    btnWhatsapp: "Написать в WhatsApp", btnTelegram: "Написать в Telegram",
+    copy: "Скопировать", copied: "Скопировано",
     copyFallback: "Текст выделен, скопируйте его вручную.",
     footer: "© 2026 Мансур · Сделано с помощью вайб-кодинга"
   },
   kk: {
-    navWorks: "Жұмыстар",
-    navServices: "Қызметтер",
-    navProcess: "Қалай жұмыс істеймін",
-    navContact: "Байланыс",
-    status: "Тапсырыс қабылдаймын",
-    heroTitle: "ЖИ-мен бірге <em>сайттар</em>, сервистер және ойындар жасаймын.",
-    heroLead: "Сіз идеяңызды өз сөзіңізбен сипаттайсыз, ал мен оны Claude көмегімен жұмыс істейтін өнімге айналдырамын. Тез әрі қолжетімді.",
-    btnWrite: "Маған жаз",
-    btnWorks: "Жұмыстарды көру",
-    chip1: "Сайт 15 000 ₸ бастап",
-    chip2: "5 түзетуге дейін",
-    chip3: "Телефонда жұмыс істейді",
-    chatStatus: "вайб-кодер · Қазақстан",
-    exampleTitle: "Мысал: маған қалай жазу керек",
-    exampleMsg: "Сәлеметсіз бе! Алматыдағы кофеханама сайт керек. Қараңғы стиль, бағалары бар мәзір, бірнеше фото және төменде WhatsApp батырмасы болсын.",
-    replyMsg: "Сәлеметсіз бе! Қажет болса, бірнеше сұрақ қойып, алғашқы бетті жасаймын.",
-    ticker: ["Лендингтер", "Визитка-сайттар", "Портфолио", "Telegram-боттар", "Калькуляторлар", "Браузерлік ойындар", "3D-сайттар", "Өтінім формалары"],
-    worksLabel: "Мысалдар",
-    worksTitle: "Менің жұмыстарым",
+    navServices: "Қызметтер", navWorks: "Жұмыстар", navProcess: "Процесс", navPlans: "Тарифтер", navBuilder: "Өтінім", navFaq: "Сұрақтар",
+    pill: "Қазақстан (UTC+5) · тапсырыс қабылдау ашық",
+    heroTitle: 'Бизнеске арналған сайттар, сервистер және ойындар <span class="hl">ЖИ көмегімен</span>.',
+    heroLead: "Сіз идеяңызды өз сөзіңізбен сипаттайсыз, ал мен оны Claude көмегімен жұмыс істейтін өнімге айналдырамын. Тез, қолжетімді және күрделі терминсіз.",
+    btnOrder: "Жобаға тапсырыс беру", btnPlans: "Бағаларды көру",
+    st1v: "15 000 ₸", st1: "Дайын сайт, бастап",
+    st2v: "5-ке дейін", st2: "Сайтқа түзету кіреді",
+    st3: "Екі тілдегі сайт",
+    st4: "Сайт демалыссыз жұмыс істейді",
+
+    servicesLabel: "Не тапсырыс беруге болады",
+    servicesTitle: "Бизнесіңіз үшін не жасаймын",
+    servicesText: "Қажетін таңдаңыз. Оң жақта клиенттеріңізге қалай көрінетінінің мысалы.",
+    t0: "Сайт", t1: "Сервис", t2: "Ойын", t3: "Telegram-бот",
+    btnThis: "Маған да осындай",
+    panels: [
+      { kicker: "01 // Бизнеске арналған сайт", title: "Клиент әкелетін сайт",
+        text: "Визитка, портфолио немесе лендинг. Клиент сайтты телефоннан ашып, бағаларды көреді де, бірден сізге жазады.",
+        ticks: ["Визитка, портфолио немесе лендинг", "Телефоннан да, компьютерден де ыңғайлы", "Клиенттер бірден жазуы үшін WhatsApp және Telegram батырмалары"] },
+      { kicker: "02 // Сервис", title: "Уақытты үнемдейтін сервис",
+        text: "Калькулятор, форма немесе шағын веб-қосымша сіз бен клиенттеріңіздің күнделікті жұмысын атқарады.",
+        ticks: ["Баға мен жеткізу калькуляторлары", "Өтінім және жазылу формалары", "Тапсырмаңызға арналған шағын веб-қосымшалар"] },
+      { kicker: "03 // Ойын", title: "Қайта оралғың келетін ойын",
+        text: "Браузердегі викторина, аркада немесе басқатырғыш. Бренд, сабақ немесе жай көңіл көтеру үшін.",
+        ticks: ["Бренд немесе сабаққа арналған викториналар", "Аркадалар мен басқатырғыштар", "Орнатусыз, сілтеме арқылы жұмыс істейді"] },
+      { kicker: "04 // Telegram-бот", title: "Сіздің орныңызға жауап беретін бот",
+        text: "Telegram-бот өтінімдерді қабылдайды, жиі сұрақтарға жауап береді және бәрін сізге жібереді.",
+        ticks: ["Өтінімдер мен жазылуларды қабылдайды", "Жиі сұрақтарға жауап береді", "Өтінімдерді сізге Telegram-ға жібереді"] }
+    ],
+    mTagSite: "Сайт", mTagService: "Сервис", mTagGame: "Ойын", mTagBot: "Бот",
+    mCafe: "«Тау» кофеханасы", mCafeSub: "Алматы · 8:00-ден 22:00-ге дейін",
+    mItem1: "Капучино", mItem2: "Сұлы сүтіндегі латте", mItem3: "Чизкейк",
+    mWa: "WhatsApp арқылы тапсырыс", mNote0: "Клиент мәзірді көріп, бірден сізге жазады",
+    mCalc: "Жеткізу калькуляторы", mFrom: "Қайдан", mTo: "Қайда", mWeight: "Сәлемдеме салмағы",
+    mCity1: "Алматы", mCity2: "Астана", mCity3: "Шымкент",
+    mCost: "Құны", mSend: "Өтінім беру", mNote1: "Мысал: баға қоңыраусыз өзі есептеледі",
+    mQuiz: "Викторина · 5-тен 3-сұрақ", mQuestion: "Қазақстанның астанасы қай қала?", mScore: "Ұпай",
+    mNote2: "Браузерде, сілтеме арқылы ойнайды",
+    mBot1: "Сәлеметсіз бе! Салонға жазылуға көмектесемін. Сізді не қызықтырады?",
+    mKey1: "Жазылу", mKey2: "Прайс", mKey3: "Мекенжай", mKey4: "Сұрақ",
+    mMe: "Сенбіге жазылу", mBot2: "11:00 мен 15:30 бос. Қай уақыт ыңғайлы?",
+    mNote3: "Өтінім бірден сізге Telegram-ға келеді",
+
+    worksLabel: "Портфолио", worksTitle: "Менің жұмыстарым",
     worksText: "Бұл сайттарды мен Claude-пен бірге жасадым. Ашып, өзіңіз көріңіз, олар телефонда да жұмыс істейді.",
     w1Poster: "1 800 м биіктіктен кофе",
     w1Type: "Кофеханаға арналған демо-сайт",
@@ -791,61 +961,150 @@ const texts = {
     w2Type: "Студияға арналған бірінші экран",
     w2Text: "AI-бейне және жарнамалық креативтер студиясының бірінші экраны. Сөз тіркестері экранда басылып шығады, ал артында 3D-сахна қозғалады.",
     workOpen: "Сайтты ашу ↗",
-    vibeLabel: "Қысқаша",
-    vibeTitle: "Вайб-кодинг деген не?",
-    vibeText: "Кодты ЖИ жазады, ал адам оны басқарады. Сондықтан кәдімгі студияға қарағанда тезірек әрі арзанырақ.",
-    vibe1Title: "Кодты ЖИ жазады",
-    vibe1Text: "Claude сипаттама бойынша белгілеуді, стильдерді және логиканы жазады.",
-    vibe2Title: "Адам басқарады",
-    vibe2Text: "Мен тапсырма қоямын, нәтижені тексеремін және түзетулер сұраймын.",
-    vibe3Title: "Тезірек әрі арзанырақ",
-    vibe3Text: "Әзірлеушілер командасы қажет емес, сондықтан бағасы да төмен.",
-    servicesLabel: "Не тапсырыс беруге болады",
-    servicesTitle: "Қызметтер",
-    s1Label: "Негізгі қызмет",
-    s1Title: "Сайт",
-    s1Text: "Визитка, портфолио, бизнеске арналған лендинг. Компьютерде де, телефонда да жұмыс істейді.",
-    s2Title: "Сервис",
-    s2Text: "Калькуляторлар, формалар, шағын веб-қосымшалар.",
-    s3Title: "Ойын",
-    s3Text: "Қарапайым браузерлік ойындар: викториналар, аркадалар, басқатырғыштар.",
-    s4Title: "Басқасы",
-    s4Text: "Claude істей алатынның бәрі: мәтіндер, кестелер, автоматтандыру.",
-    s5Title: "Telegram-бот",
-    s5Text: "Өтінім қабылдайтын, жазылуға немесе жиі сұрақтарға жауап беретін бот.",
-    priceDeal: "келісім бойынша",
-    priceSite: "15 000 ₸ бастап",
-    priceSiteNote: "5 түзетуге дейін кіреді",
-    priceOtherNote: "3 түзетуге дейін кіреді",
-    btnOrder: "WhatsApp арқылы сайтқа тапсырыс беру",
-    orderText: "Сәлеметсіз бе, Мансур! Сайтқа тапсырыс бергім келеді.",
-    processLabel: "Төрт қадам",
-    processTitle: "Қалай жұмыс істеймін",
-    step1: "Сіз идеяңызды WhatsApp немесе Telegram-ға жазасыз.",
-    step2: "Қажет болса, бірнеше сұрақ қойып, бағасын айтамын.",
-    step3: "Алғашқы бетті жасап, сізге көрсетемін.",
-    step4: "Түзетулер енгіземін: сайт үшін 5 ретке дейін, басқа қызметтер үшін 3 ретке дейін.",
-    contactTitle: "Маған жаз",
-    contactLead: "Идеяңызды беттің жоғарғы жағындағы мысалдағыдай өз сөзіңізбен сипаттаңыз. Шай дайын, хабарламаңызды күтемін.",
-    btnWhatsapp: "WhatsApp-қа жазу",
-    btnTelegram: "Telegram-ға жазу",
-    copy: "Көшіру",
-    copied: "Көшірілді",
+
+    processLabel: "Қарапайым процесс", processTitle: "Қалай жұмыс істеймін",
+    processText: "Сіздің хабарламаңыздан дайын өнімге дейін төрт қадам.",
+    s1h: "Идеяңызды жазасыз", step1: "Сіз идеяңызды WhatsApp немесе Telegram-ға жазасыз.",
+    s2h: "Сұрақтар мен баға", step2: "Қажет болса, бірнеше сұрақ қойып, бағасын айтамын.",
+    s3h: "Алғашқы бет", step3: "Алғашқы бетті жасап, сізге көрсетемін.",
+    s4h: "Түзетулер мен іске қосу", step4: "Түзетулер енгіземін: сайт үшін 5 ретке дейін, басқа қызметтер үшін 3 ретке дейін.",
+
+    plansLabel: "Түсінікті бағалар", plansTitle: "Артық төлемсіз әділ баға",
+    plansText: "«Таңдау» батырмасын басыңыз, тариф төмендегі өтінімге өзі қойылады.",
+    bHit: "Негізгі", bSites: "Сайттар", bApps: "Сервистер", bGames: "Ойындар", bBots: "Боттар",
+    p1t: "Сайт", p1d: "Бизнеске арналған визитка, портфолио немесе лендинг.",
+    p1a: "Компьютерде де, телефонда да жұмыс істейді", p1b: "5 түзетуге дейін кіреді", p1c: "WhatsApp және Telegram батырмалары", p1e: "Орыс және қазақ тілдерінде болады",
+    p2t: "Сервис", s2Text: "Калькуляторлар, формалар, шағын веб-қосымшалар.",
+    p2a: "Клиент үшін баға мен мерзімді есептейді", p2b: "Өтінім және жазылу формалары",
+    p3t: "Ойын", s3Text: "Қарапайым браузерлік ойындар: викториналар, аркадалар, басқатырғыштар.",
+    p3a: "Орнатусыз, сілтеме арқылы ойнайды", p3b: "Брендіңіздің стилінде жасауға болады", p3c: "3 түзетуге дейін кіреді",
+    p4t: "Telegram-бот және басқасы", p4d: "Өтінімдерге арналған бот немесе Claude істей алатынның бәрі: мәтіндер, кестелер, автоматтандыру.",
+    p4a: "Өтінімдер мен жазылуларды қабылдайды", p4b: "Жиі сұрақтарға жауап береді",
+    priceSite: "15 000 ₸ бастап", priceDeal: "келісім бойынша", pick: "Таңдау",
+
+    bLabel: "Бір минутта өтінім", bTitle: "Маған хабарлама құрастырыңыз",
+    bText: "Қажетін белгілеп, идеяңыз туралы бірер сөз қосыңыз. Дайын хабарлама WhatsApp-қа бір басумен жіберіледі.",
+    bStep1: "1. Не жасау керек?", bStep2: "2. Не маңызды? (бірнешеуін таңдауға болады)", bStep3: "3. Идея туралы бірер сөз",
+    bPlaceholder: "Мысалы: Алматыдағы кофехана, қараңғы стиль және бағалары бар мәзір керек",
+    types: { site: "Сайт", service: "Сервис", game: "Ойын", bot: "Telegram-бот", other: "Басқасы" },
+    opts: { menu: "Мәзір немесе прайс", gallery: "Фотогалерея", form: "Өтінім формасы", langs: "Екі тіл: RU және KZ", motion: "3D және анимация", wa: "WhatsApp батырмасы" },
+    bOutLabel: "Сіздің өтініміңіз", bType: "Түрі", bEdits: "Түзетулер", bPrice: "Баға",
+    edits5: "5-ке дейін", edits3: "3-ке дейін",
+    bSendWa: "WhatsApp-қа жіберу", bSendTg: "Көшіріп, Telegram-ды ашу",
+    bCopied: "Хабарлама көшірілді. Оны Telegram чатына қойыңыз.",
+    bCopyFail: "Көшіру мүмкін болмады. Хабарлама мәтінін белгілеп, қолмен көшіріңіз.",
+    msgHello: "Сәлеметсіз бе, Мансур!", msgNeed: "Керегі", msgImportant: "Маңыздысы", msgIdea: "Идея",
+
+    faqLabel: "Сұрақтар", faqTitle: "Жиі қойылатын сұрақтар",
+    q1: "Сайт қанша тұрады?", a1: "Сайт 15 000 ₸-ден басталады. Сервисті, ойынды немесе ботты міндет түсінікті болған соң, қысқа әңгімеден кейін бағалаймын.",
+    q2: "Бағаға қанша түзету кіреді?", a2: "Сайт үшін 5 түзетуге дейін, басқа қызметтер үшін 3-ке дейін.",
+    q3: "Менен не керек?", a3: "Идеяңызды өз сөзіңізбен сипаттаңыз. Фото, логотип немесе мәтіндер болса, жіберіңіз. Бірдеңе жоқ болса, не жарайтынын айтамын.",
+    q4: "Сайт қайда орналасады?", a4: "Сайтты GitHub Pages-ке тегін орналастыра аламын. Өз мекенжайыңыз керек болса, мысалы name.kz, доменді сіз сатып аласыз, ал мен оны сайтқа қосамын.",
+    q5: "Вайб-кодинг деген не?", a5: "Кодты ЖИ (Claude) жазады, ал мен тапсырма қойып, нәтижені тексеремін және түзетулер сұраймын. Сондықтан кәдімгі студияға қарағанда тезірек әрі арзанырақ.",
+    q6: "Сайт қазақша бола ма?", a6: "Иә. Сайт орысша, қазақша немесе дәл осы сайт сияқты бірден екі тілде болуы мүмкін.",
+
+    ctaLabel: "Байланыс", ctaTitle: "Жобаңызды іске қосуға дайынсыз ба?",
+    contactLead: "Идеяңызды жоғарыдағы мысалдағыдай өз сөзіңізбен сипаттаңыз. Шай дайын, хабарламаңызды күтемін.",
+    btnWhatsapp: "WhatsApp-қа жазу", btnTelegram: "Telegram-ға жазу",
+    copy: "Көшіру", copied: "Көшірілді",
     copyFallback: "Мәтін белгіленді, оны қолмен көшіріңіз.",
     footer: "© 2026 Мансур · Вайб-кодинг арқылы жасалған"
   }
 };
 
-// ===== Переключение языка =====
+const PHONE = "77773364268";
 let currentLang = "ru";
+let currentTab = 0;
+const order = { type: "site", opts: new Set() };
 
-function buildTicker(items) {
-  const track = document.getElementById("ticker");
-  const row = items.map(t => "<span>" + t + "</span>").join("");
-  const hidden = items.map(t => '<span aria-hidden="true">' + t + "</span>").join("");
-  track.innerHTML = row + hidden; // вторая копия нужна, чтобы строка бежала без разрыва
+// ===== Вкладки услуг =====
+function renderPanel(animate) {
+  const p = texts[currentLang].panels[currentTab];
+  document.getElementById("p-kicker").textContent = p.kicker;
+  document.getElementById("p-title").textContent = p.title;
+  document.getElementById("p-text").textContent = p.text;
+  const ul = document.getElementById("p-ticks");
+  ul.innerHTML = "";
+  p.ticks.forEach(t => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+  document.querySelectorAll("[data-mock]").forEach(m => { m.hidden = m.dataset.mock !== String(currentTab); });
+  document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === String(currentTab) ? "true" : "false"));
+  const panel = document.getElementById("panel");
+  panel.setAttribute("aria-labelledby", "tab-" + currentTab);
+  if (animate) { panel.classList.remove("swap"); void panel.offsetWidth; panel.classList.add("swap"); }
 }
+document.querySelectorAll(".tab").forEach(btn => {
+  btn.addEventListener("click", () => { currentTab = Number(btn.dataset.tab); renderPanel(true); });
+  btn.addEventListener("keydown", e => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    currentTab = (currentTab + (e.key === "ArrowRight" ? 1 : 3)) % 4;
+    renderPanel(true);
+    document.getElementById("tab-" + currentTab).focus();
+  });
+});
 
+// ===== Конструктор заявки =====
+function buildChoices() {
+  const t = texts[currentLang];
+  const types = document.getElementById("b-types");
+  const opts = document.getElementById("b-opts");
+  types.innerHTML = ""; opts.innerHTML = "";
+  Object.entries(t.types).forEach(([key, label]) => {
+    types.insertAdjacentHTML("beforeend",
+      '<label class="choice"><input type="radio" name="b-type" id="type-' + key + '" value="' + key + '"' + (order.type === key ? " checked" : "") + '><span>' + label + '</span></label>');
+  });
+  Object.entries(t.opts).forEach(([key, label]) => {
+    opts.insertAdjacentHTML("beforeend",
+      '<label class="choice"><input type="checkbox" id="opt-' + key + '" value="' + key + '"' + (order.opts.has(key) ? " checked" : "") + '><span>' + label + '</span></label>');
+  });
+}
+function buildMessage() {
+  const t = texts[currentLang];
+  const idea = document.getElementById("b-idea").value.trim();
+  const lines = [t.msgHello, t.msgNeed + ": " + t.types[order.type].toLowerCase() + "."];
+  if (order.opts.size) lines.push(t.msgImportant + ": " + [...order.opts].map(k => t.opts[k].toLowerCase()).join(", ") + ".");
+  if (idea) lines.push(t.msgIdea + ": " + idea);
+  return lines.join("\n");
+}
+function renderOrder() {
+  const t = texts[currentLang];
+  const isSite = order.type === "site";
+  document.getElementById("o-type").textContent = t.types[order.type];
+  document.getElementById("o-edits").textContent = isSite ? t.edits5 : t.edits3;
+  document.getElementById("o-price").textContent = isSite ? t.priceSite : t.priceDeal;
+  const msg = buildMessage();
+  document.getElementById("o-msg").textContent = msg;
+  document.getElementById("o-wa").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+}
+document.getElementById("b-form").addEventListener("change", e => {
+  const el = e.target;
+  if (el.name === "b-type") order.type = el.value;
+  else if (el.type === "checkbox") el.checked ? order.opts.add(el.value) : order.opts.delete(el.value);
+  renderOrder();
+});
+document.getElementById("b-form").addEventListener("submit", e => e.preventDefault());
+document.getElementById("b-idea").addEventListener("input", renderOrder);
+document.querySelectorAll("[data-pick]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    order.type = btn.dataset.pick;
+    const input = document.getElementById("type-" + order.type);
+    if (input) input.checked = true;
+    renderOrder();
+    document.getElementById("builder").scrollIntoView();
+  });
+});
+document.getElementById("o-tg").addEventListener("click", () => {
+  // Telegram не умеет подставлять текст в личный чат, поэтому копируем сообщение заранее
+  const note = document.getElementById("o-note");
+  const t = texts[currentLang];
+  const fail = () => { selectText(document.getElementById("o-msg")); note.textContent = t.bCopyFail; };
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(buildMessage()).then(() => { note.textContent = t.bCopied; }, fail);
+    } else fail();
+  } catch (e) { fail(); }
+});
+
+// ===== Переключение языка =====
 function setLang(lang) {
   if (!texts[lang]) lang = "ru";
   currentLang = lang;
@@ -853,26 +1112,31 @@ function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const value = t[el.dataset.i18n];
-    if (value === undefined) return;
+    if (typeof value !== "string") return;
     if (el.hasAttribute("data-i18n-html")) el.innerHTML = value;
     else el.textContent = value;
   });
-  document.querySelectorAll(".lang button").forEach(btn => {
-    btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
-  });
-  document.querySelectorAll(".copy-note").forEach(n => { n.textContent = ""; });
-  document.getElementById("order-site").href = "https://wa.me/77773364268?text=" + encodeURIComponent(t.orderText);
-  buildTicker(t.ticker);
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { el.placeholder = t[el.dataset.i18nPlaceholder]; });
+  document.querySelectorAll(".lang button").forEach(btn => btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false"));
+  document.getElementById("copy-note").textContent = "";
+  document.getElementById("o-note").textContent = "";
+  renderPanel(false);
+  buildChoices();
+  renderOrder();
   try { localStorage.setItem("lang", lang); } catch (e) {}
 }
+document.querySelectorAll(".lang button").forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
 
-document.querySelectorAll(".lang button").forEach(btn => {
-  btn.addEventListener("click", () => setLang(btn.dataset.lang));
+// ===== Меню на телефоне =====
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+burger.addEventListener("click", () => {
+  const open = menu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
 });
-
-let savedLang = null;
-try { savedLang = localStorage.getItem("lang"); } catch (e) {}
-setLang(savedLang || "ru");
+menu.addEventListener("click", e => {
+  if (e.target.closest("a")) { menu.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }
+});
 
 // ===== Копирование номера и ника =====
 function selectText(el) {
@@ -882,33 +1146,36 @@ function selectText(el) {
   sel.removeAllRanges();
   sel.addRange(range);
 }
-
 document.querySelectorAll("[data-copy]").forEach(btn => {
   btn.addEventListener("click", () => {
-    const id = btn.dataset.copy;
-    const valueEl = document.getElementById(id);
-    const note = document.getElementById("note-" + id);
+    const valueEl = document.getElementById(btn.dataset.copy);
+    const note = document.getElementById("copy-note");
     const t = texts[currentLang];
-    const done = () => {
-      btn.textContent = t.copied;
-      note.textContent = "";
-      setTimeout(() => { btn.textContent = texts[currentLang].copy; }, 1800);
-    };
-    const fail = () => {
-      selectText(valueEl);
-      note.textContent = t.copyFallback;
-    };
+    const done = () => { btn.textContent = t.copied; note.textContent = ""; setTimeout(() => { btn.textContent = texts[currentLang].copy; }, 1800); };
+    const fail = () => { selectText(valueEl); note.textContent = t.copyFallback; };
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(valueEl.textContent.trim()).then(done, fail);
-      } else {
-        fail();
-      }
-    } catch (e) {
-      fail();
-    }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(valueEl.textContent.trim()).then(done, fail);
+      else fail();
+    } catch (e) { fail(); }
   });
 });
+
+let savedLang = null;
+try { savedLang = localStorage.getItem("lang"); } catch (e) {}
+setLang(savedLang || "ru");
+
+// ===== Появление блоков при прокрутке =====
+(function () {
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (calm || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  // Подстраховка: через 4 секунды показываем всё, даже если наблюдатель не сработал
+  setTimeout(() => document.querySelectorAll(".reveal").forEach(el => el.classList.add("in")), 4000);
+})();
 
 // ===== Живое превью работ (только на компьютере, когда карточка видна) =====
 (function () {
@@ -916,10 +1183,8 @@ document.querySelectorAll("[data-copy]").forEach(btn => {
   const wide = window.matchMedia("(min-width: 861px)").matches;
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!wide || calm || !("IntersectionObserver" in window)) return;
-
   const fit = shot => shot.style.setProperty("--s", shot.clientWidth / 1280);
   const ro = "ResizeObserver" in window ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
-
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -939,18 +1204,6 @@ document.querySelectorAll("[data-copy]").forEach(btn => {
     });
   }, { rootMargin: "200px" });
   shots.forEach(s => io.observe(s));
-})();
-
-// ===== Кнопки внизу на телефоне: видны после первого экрана, прячутся у контактов =====
-(function () {
-  const dock = document.getElementById("dock");
-  const hero = document.querySelector(".hero");
-  const contact = document.getElementById("contact");
-  if (!("IntersectionObserver" in window)) { dock.classList.add("show"); return; }
-  let heroVisible = true, contactVisible = false;
-  const update = () => dock.classList.toggle("show", !heroVisible && !contactVisible);
-  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
-  new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
 })();
 </script>
 </body>
