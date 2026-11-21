@@ -930,6 +930,7 @@ document.querySelectorAll("[data-copy]").forEach(btn => {
       const frame = document.createElement("iframe");
       frame.src = shot.dataset.src;
       frame.loading = "lazy";
+      frame.setAttribute("scrolling", "no");
       frame.tabIndex = -1;
       frame.setAttribute("aria-hidden", "true");
       frame.title = "";
