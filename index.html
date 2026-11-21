@@ -515,7 +515,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="head reveal">
         <span class="mono kicker" data-i18n="servicesLabel">Что можно заказать</span>
         <h2 data-i18n="servicesTitle">Что я сделаю для вашего бизнеса</h2>
-        <p data-i18n="servicesText">Выберите, что нужно. Справа пример, как это будет выглядеть у ваших клиентов.</p>
+        <p data-i18n="servicesText">Нажмите на вкладку. Слева написано, что вы получите, справа пример, как это может выглядеть.</p>
       </div>
 
       <div class="tabs reveal" role="tablist" aria-label="Услуги">
@@ -536,7 +536,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
         <!-- Четыре макета, виден один -->
         <div class="mock" data-mock="0">
-          <div class="mock-head"><span class="mono kicker">sayt.kz/coffee</span><span class="mono mock-tag" data-i18n="mTagSite">Сайт</span></div>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mEx0">Пример: сайт кофейни</span><span class="mono mock-tag" data-i18n="mTagSite">Сайт</span></div>
           <div class="m-hero"><b data-i18n="mCafe">Кофейня «Тау»</b><small data-i18n="mCafeSub">Алматы · с 8:00 до 22:00</small></div>
           <div class="m-card">
             <div class="m-row"><span data-i18n="mItem1">Капучино</span><b>1 200 ₸</b></div>
@@ -544,10 +544,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
             <div class="m-row"><span data-i18n="mItem3">Чизкейк</span><b>1 800 ₸</b></div>
           </div>
           <div class="m-btn wa" data-i18n="mWa">Заказать в WhatsApp</div>
-          <div class="m-note" data-i18n="mNote0">Клиент видит меню и сразу пишет вам</div>
+          <div class="m-note" data-i18n="mNote0">Так клиент видит сайт на телефоне</div>
         </div>
         <div class="mock" data-mock="1" hidden>
-          <div class="mock-head"><span class="mono kicker" data-i18n="mCalc">Калькулятор доставки</span><span class="mono mock-tag" data-i18n="mTagService">Сервис</span></div>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mCalc">Пример: калькулятор доставки</span><span class="mono mock-tag" data-i18n="mTagService">Сервис</span></div>
           <div class="m-field"><span data-i18n="mFrom">Откуда</span><div data-i18n="mCity1">Алматы</div></div>
           <div class="m-field"><span data-i18n="mTo">Куда</span><div data-i18n="mCity2">Астана</div></div>
           <div class="m-field"><span data-i18n="mWeight">Вес посылки</span><div>3 кг</div></div>
@@ -556,7 +556,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <div class="m-note" data-i18n="mNote1">Пример: цена считается сама, без звонков</div>
         </div>
         <div class="mock" data-mock="2" hidden>
-          <div class="mock-head"><span class="mono kicker" data-i18n="mQuiz">Викторина · вопрос 3 из 5</span><span class="mono mock-tag" data-i18n="mTagGame">Игра</span></div>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mQuiz">Пример: викторина</span><span class="mono mock-tag" data-i18n="mTagGame">Игра</span></div>
           <div class="m-progress"><i></i></div>
           <div class="m-q" data-i18n="mQuestion">Какой город — столица Казахстана?</div>
           <div class="m-opts">
@@ -568,7 +568,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <div class="m-note" data-i18n="mNote2">Играют прямо в браузере, по ссылке</div>
         </div>
         <div class="mock" data-mock="3" hidden>
-          <div class="mock-head"><span class="mono kicker">@salon_bot</span><span class="mono mock-tag" data-i18n="mTagBot">Бот</span></div>
+          <div class="mock-head"><span class="mono kicker" data-i18n="mEx3">Пример: бот салона</span><span class="mono mock-tag" data-i18n="mTagBot">Бот</span></div>
           <div class="m-msg" data-i18n="mBot1">Здравствуйте! Я помогу записаться в салон. Что вас интересует?</div>
           <div class="m-keys"><span data-i18n="mKey1">Записаться</span><span data-i18n="mKey2">Прайс</span><span data-i18n="mKey3">Адрес</span><span data-i18n="mKey4">Вопрос</span></div>
           <div class="m-msg me" data-i18n="mMe">Записаться на субботу</div>
@@ -821,31 +821,31 @@ const texts = {
 
     servicesLabel: "Что можно заказать",
     servicesTitle: "Что я сделаю для вашего бизнеса",
-    servicesText: "Выберите, что нужно. Справа пример, как это будет выглядеть у ваших клиентов.",
+    servicesText: "Нажмите на вкладку. Слева написано, что вы получите, справа пример, как это может выглядеть.",
     t0: "Сайт", t1: "Сервис", t2: "Игра", t3: "Telegram-бот",
     btnThis: "Хочу так же",
     panels: [
-      { kicker: "01 // Сайт для бизнеса", title: "Сайт, который приводит клиентов",
-        text: "Визитка, портфолио или лендинг. Клиент открывает сайт с телефона, видит цены и сразу пишет вам.",
-        ticks: ["Визитка, портфолио или лендинг", "Удобно смотреть с телефона и компьютера", "Кнопки WhatsApp и Telegram, чтобы клиенты сразу писали"] },
-      { kicker: "02 // Сервис", title: "Сервис, который экономит время",
-        text: "Калькулятор, форма или небольшое веб-приложение делают рутину за вас и ваших клиентов.",
+      { kicker: "01 // Сайт", title: "Сайт для вашего бизнеса",
+        text: "Это страница в интернете о вашем деле: кто вы, что продаёте, сколько стоит и как связаться. Клиент открывает её с телефона и сразу пишет вам в WhatsApp.",
+        ticks: ["Подходит кофейне, магазину, мастеру или салону", "Цены, фото и адрес в одном месте", "Кнопка WhatsApp: клиент пишет вам в один клик"] },
+      { kicker: "02 // Сервис", title: "Сервис: программа на сайте",
+        text: "Например, калькулятор: клиент вводит данные и сразу видит цену, без звонков вам.",
         ticks: ["Калькуляторы цен и доставки", "Формы заявок и записи", "Небольшие веб-приложения под вашу задачу"] },
-      { kicker: "03 // Игра", title: "Игра, в которую хочется вернуться",
-        text: "Викторина, аркада или головоломка в браузере. Подходит для бренда, урока или просто для удовольствия.",
+      { kicker: "03 // Игра", title: "Игра в браузере",
+        text: "Викторина, аркада или головоломка. Открывается по ссылке, ничего устанавливать не нужно.",
         ticks: ["Викторины для бренда или урока", "Аркады и головоломки", "Работает без установки, по ссылке"] },
-      { kicker: "04 // Telegram-бот", title: "Бот, который отвечает за вас",
-        text: "Telegram-бот принимает заявки, отвечает на частые вопросы и пересылает всё вам.",
+      { kicker: "04 // Telegram-бот", title: "Telegram-бот для заявок",
+        text: "Бот сам отвечает клиентам в Telegram: записывает, показывает прайс и присылает заявку вам.",
         ticks: ["Принимает заявки и записи", "Отвечает на частые вопросы", "Присылает заявки вам в Telegram"] }
     ],
     mTagSite: "Сайт", mTagService: "Сервис", mTagGame: "Игра", mTagBot: "Бот",
     mCafe: "Кофейня «Тау»", mCafeSub: "Алматы · с 8:00 до 22:00",
     mItem1: "Капучино", mItem2: "Латте на овсяном", mItem3: "Чизкейк",
-    mWa: "Заказать в WhatsApp", mNote0: "Клиент видит меню и сразу пишет вам",
-    mCalc: "Калькулятор доставки", mFrom: "Откуда", mTo: "Куда", mWeight: "Вес посылки",
+    mWa: "Заказать в WhatsApp", mNote0: "Так клиент видит сайт на телефоне",
+    mCalc: "Пример: калькулятор доставки", mFrom: "Откуда", mTo: "Куда", mWeight: "Вес посылки",
     mCity1: "Алматы", mCity2: "Астана", mCity3: "Шымкент",
     mCost: "Стоимость", mSend: "Оформить заявку", mNote1: "Пример: цена считается сама, без звонков",
-    mQuiz: "Викторина · вопрос 3 из 5", mQuestion: "Какой город — столица Казахстана?", mScore: "Очки",
+    mQuiz: "Пример: викторина", mEx0: "Пример: сайт кофейни", mEx3: "Пример: бот салона", mQuestion: "Какой город — столица Казахстана?", mScore: "Очки",
     mNote2: "Играют прямо в браузере, по ссылке",
     mBot1: "Здравствуйте! Я помогу записаться в салон. Что вас интересует?",
     mKey1: "Записаться", mKey2: "Прайс", mKey3: "Адрес", mKey4: "Вопрос",
@@ -922,31 +922,31 @@ const texts = {
 
     servicesLabel: "Не тапсырыс беруге болады",
     servicesTitle: "Бизнесіңіз үшін не жасаймын",
-    servicesText: "Қажетін таңдаңыз. Оң жақта клиенттеріңізге қалай көрінетінінің мысалы.",
+    servicesText: "Қойындыны басыңыз. Сол жақта не алатыныңыз жазылған, оң жақта қалай көрінуі мүмкін екенінің мысалы.",
     t0: "Сайт", t1: "Сервис", t2: "Ойын", t3: "Telegram-бот",
     btnThis: "Маған да осындай",
     panels: [
-      { kicker: "01 // Бизнеске арналған сайт", title: "Клиент әкелетін сайт",
-        text: "Визитка, портфолио немесе лендинг. Клиент сайтты телефоннан ашып, бағаларды көреді де, бірден сізге жазады.",
-        ticks: ["Визитка, портфолио немесе лендинг", "Телефоннан да, компьютерден де ыңғайлы", "Клиенттер бірден жазуы үшін WhatsApp және Telegram батырмалары"] },
-      { kicker: "02 // Сервис", title: "Уақытты үнемдейтін сервис",
-        text: "Калькулятор, форма немесе шағын веб-қосымша сіз бен клиенттеріңіздің күнделікті жұмысын атқарады.",
+      { kicker: "01 // Сайт", title: "Бизнесіңізге арналған сайт",
+        text: "Бұл ісіңіз туралы интернеттегі бет: кім екеніңіз, не сататыныңыз, бағасы қанша және қалай байланысуға болады. Клиент оны телефоннан ашып, бірден WhatsApp-қа жазады.",
+        ticks: ["Кофеханаға, дүкенге, шеберге немесе салонға жарайды", "Бағалар, фото және мекенжай бір жерде", "WhatsApp батырмасы: клиент сізге бір басумен жазады"] },
+      { kicker: "02 // Сервис", title: "Сервис: сайттағы бағдарлама",
+        text: "Мысалы, калькулятор: клиент деректерді енгізіп, бағаны бірден көреді, сізге қоңырау шалмай-ақ.",
         ticks: ["Баға мен жеткізу калькуляторлары", "Өтінім және жазылу формалары", "Тапсырмаңызға арналған шағын веб-қосымшалар"] },
-      { kicker: "03 // Ойын", title: "Қайта оралғың келетін ойын",
-        text: "Браузердегі викторина, аркада немесе басқатырғыш. Бренд, сабақ немесе жай көңіл көтеру үшін.",
+      { kicker: "03 // Ойын", title: "Браузердегі ойын",
+        text: "Викторина, аркада немесе басқатырғыш. Сілтеме арқылы ашылады, ештеңе орнатудың қажеті жоқ.",
         ticks: ["Бренд немесе сабаққа арналған викториналар", "Аркадалар мен басқатырғыштар", "Орнатусыз, сілтеме арқылы жұмыс істейді"] },
-      { kicker: "04 // Telegram-бот", title: "Сіздің орныңызға жауап беретін бот",
-        text: "Telegram-бот өтінімдерді қабылдайды, жиі сұрақтарға жауап береді және бәрін сізге жібереді.",
+      { kicker: "04 // Telegram-бот", title: "Өтінімдерге арналған Telegram-бот",
+        text: "Бот Telegram-да клиенттерге өзі жауап береді: жазып алады, прайсты көрсетеді және өтінімді сізге жібереді.",
         ticks: ["Өтінімдер мен жазылуларды қабылдайды", "Жиі сұрақтарға жауап береді", "Өтінімдерді сізге Telegram-ға жібереді"] }
     ],
     mTagSite: "Сайт", mTagService: "Сервис", mTagGame: "Ойын", mTagBot: "Бот",
     mCafe: "«Тау» кофеханасы", mCafeSub: "Алматы · 8:00-ден 22:00-ге дейін",
     mItem1: "Капучино", mItem2: "Сұлы сүтіндегі латте", mItem3: "Чизкейк",
-    mWa: "WhatsApp арқылы тапсырыс", mNote0: "Клиент мәзірді көріп, бірден сізге жазады",
-    mCalc: "Жеткізу калькуляторы", mFrom: "Қайдан", mTo: "Қайда", mWeight: "Сәлемдеме салмағы",
+    mWa: "WhatsApp арқылы тапсырыс", mNote0: "Клиент сайтты телефоннан осылай көреді",
+    mCalc: "Мысал: жеткізу калькуляторы", mFrom: "Қайдан", mTo: "Қайда", mWeight: "Сәлемдеме салмағы",
     mCity1: "Алматы", mCity2: "Астана", mCity3: "Шымкент",
     mCost: "Құны", mSend: "Өтінім беру", mNote1: "Мысал: баға қоңыраусыз өзі есептеледі",
-    mQuiz: "Викторина · 5-тен 3-сұрақ", mQuestion: "Қазақстанның астанасы қай қала?", mScore: "Ұпай",
+    mQuiz: "Мысал: викторина", mEx0: "Мысал: кофехана сайты", mEx3: "Мысал: салон боты", mQuestion: "Қазақстанның астанасы қай қала?", mScore: "Ұпай",
     mNote2: "Браузерде, сілтеме арқылы ойнайды",
     mBot1: "Сәлеметсіз бе! Салонға жазылуға көмектесемін. Сізді не қызықтырады?",
     mKey1: "Жазылу", mKey2: "Прайс", mKey3: "Мекенжай", mKey4: "Сұрақ",
