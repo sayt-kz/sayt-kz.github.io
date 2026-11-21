@@ -3,64 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Портфолио Мансура</title>
-<meta name="description" content="Мансур делает сайты, сервисы и игры вместе с ИИ. Сайт от 15 000 ₸. Казахстан.">
+<title>Мансур · Сайты от 15 000 ₸ в Казахстане</title>
+<meta name="description" content="Мансур делает сайты, сервисы, Telegram-ботов и игры вместе с ИИ. Сайт от 15 000 ₸, до 5 правок. Пишите в WhatsApp или Telegram.">
+<link rel="canonical" href="https://sayt-kz.github.io/">
+<meta name="theme-color" content="#0d1530">
+
+<!-- Превью ссылки в WhatsApp, Telegram, Instagram -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sayt-kz.github.io/">
+<meta property="og:title" content="Мансур · Сайты от 15 000 ₸">
+<meta property="og:description" content="Делаю сайты, сервисы и игры вместе с ИИ. Быстро и недорого. Казахстан.">
+<meta property="og:image" content="https://sayt-kz.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sayt-kz.github.io/og.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d1530'/%3E%3Ctext x='29' y='46' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%23eef1fb' text-anchor='middle'%3EМ%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%23f6b93b'/%3E%3C/svg%3E">
+
+<!-- Для поисковиков: кто я, где работаю, контакты -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Мансур — сайты, сервисы и игры с ИИ",
+  "url": "https://sayt-kz.github.io/",
+  "image": "https://sayt-kz.github.io/og.png",
+  "telephone": "+77773364268",
+  "areaServed": { "@type": "Country", "name": "Kazakhstan" },
+  "priceRange": "от 15 000 ₸",
+  "availableLanguage": ["ru", "kk"],
+  "sameAs": ["https://t.me/arbus33222", "https://wa.me/77773364268"],
+  "description": "Сайты-визитки, лендинги, портфолио, сервисы, Telegram-боты и браузерные игры с помощью ИИ."
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Раскладка: узкая колонка ~1080px; первый экран в две колонки (текст + пример сообщения),
-   на телефоне всё в одну колонку. Тёмная тема по умолчанию, светлая — если в системе светлая. */
+/* Раскладка: колонка ~1120px. Первый экран: крупный заголовок + окно чата как в мессенджере.
+   Под ним бегущая строка услуг, затем работы с живым превью, услуги плиткой, шаги и контакты.
+   Тёмная тема по умолчанию, светлая — если в системе светлая. */
 
 /* ===== ЦВЕТА: всё здесь. Меняйте значения — меняется весь сайт ===== */
 :root {
   --night:      #0d1530;  /* фон страницы: ночной синий */
   --night-2:    #141f42;  /* фон карточек */
+  --night-3:    #1a2752;  /* приподнятые элементы */
   --line:       #26335e;  /* рамки и разделители */
   --text:       #eef1fb;  /* основной текст */
   --muted:      #9aa6cc;  /* второстепенный текст */
   --sun:        #f6b93b;  /* солнечно-золотой: главные кнопки, цена */
-  --sun-ink:    #f6b93b;  /* золотой для текста (цена) */
+  --sun-ink:    #f6b93b;  /* золотой для текста */
   --on-sun:     #1a1404;  /* текст на золотой кнопке */
   --sky:        #7cc8f8;  /* небесно-голубой: подписи, ссылки */
-  --bubble:     #1d2b57;  /* пузырь чата */
-  --glow:       rgba(246, 185, 59, .14);
+  --online:     #3ddc84;  /* зелёная точка «принимаю заказы» */
+  --bubble-in:  #1d2b57;  /* пузырь собеседника */
+  --bubble-out: #2b4a86;  /* пузырь клиента */
+  --glow:       rgba(246, 185, 59, .16);
+  --glow-sky:   rgba(124, 200, 248, .12);
+
+  /* Обложки работ (пока не загрузилось живое превью) */
+  --tau-a: #3a2416; --tau-b: #c98a4b; --tau-ink: #fbeedd;
+  --apex-a: #05070f; --apex-b: #1f6fb2; --apex-ink: #e8f4ff;
 
   --font-display: "Unbounded", "Arial Black", system-ui, sans-serif;
   --font-body:    "Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, "Consolas", monospace;
 
-  --radius: 14px;
+  --radius: 18px;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --night:   #f3f5fb;
-    --night-2: #ffffff;
-    --line:    #d7ddef;
-    --text:    #111a3a;
-    --muted:   #55618a;
-    --sun:     #f6b93b;
-    --sun-ink: #a26a00;
-    --on-sun:  #1a1404;
-    --sky:     #1f6fb2;
-    --bubble:  #e3ecfb;
-    --glow:    rgba(246, 185, 59, .22);
+    --night: #f3f5fb; --night-2: #ffffff; --night-3: #eef2fb; --line: #d7ddef;
+    --text: #111a3a; --muted: #55618a;
+    --sun: #f6b93b; --sun-ink: #a26a00; --on-sun: #1a1404;
+    --sky: #1f6fb2; --online: #17a35a;
+    --bubble-in: #eef2fb; --bubble-out: #d6e6ff;
+    --glow: rgba(246, 185, 59, .25); --glow-sky: rgba(31, 111, 178, .10);
     color-scheme: light;
   }
 }
 :root[data-theme="light"] {
-  --night:   #f3f5fb;
-  --night-2: #ffffff;
-  --line:    #d7ddef;
-  --text:    #111a3a;
-  --muted:   #55618a;
-  --sun:     #f6b93b;
-  --sun-ink: #a26a00;
-  --on-sun:  #1a1404;
-  --sky:     #1f6fb2;
-  --bubble:  #e3ecfb;
-  --glow:    rgba(246, 185, 59, .22);
+  --night: #f3f5fb; --night-2: #ffffff; --night-3: #eef2fb; --line: #d7ddef;
+  --text: #111a3a; --muted: #55618a;
+  --sun: #f6b93b; --sun-ink: #a26a00; --on-sun: #1a1404;
+  --sky: #1f6fb2; --online: #17a35a;
+  --bubble-in: #eef2fb; --bubble-out: #d6e6ff;
+  --glow: rgba(246, 185, 59, .25); --glow-sky: rgba(31, 111, 178, .10);
   color-scheme: light;
 }
 
@@ -73,13 +107,14 @@ body {
   color: var(--text);
   font: 400 1.0625rem/1.6 var(--font-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 a { color: var(--sky); }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; }
 p { margin: 0; }
-:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
 
-.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
 .label {
   font-family: var(--font-mono);
   font-size: .78rem;
@@ -92,22 +127,16 @@ p { margin: 0; }
 .topbar {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
-  z-index: 10;
-  background: color-mix(in srgb, var(--night) 88%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: 20;
+  background: color-mix(in srgb, var(--night) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
   border-bottom: 1px solid var(--line);
 }
-.topbar .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
-.logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--text);
-  text-decoration: none;
-}
+.topbar .wrap { display: flex; align-items: center; gap: 24px; height: 66px; }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
 .logo span { color: var(--sun); }
-.nav { display: flex; gap: 24px; margin-left: auto; }
+.nav { display: flex; gap: 22px; margin-left: auto; }
 .nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
 .nav a:hover { color: var(--text); }
 .lang {
@@ -119,254 +148,288 @@ p { margin: 0; }
   font-size: .8rem;
 }
 .lang button {
-  border: 0;
-  background: none;
-  color: var(--muted);
-  padding: 5px 11px;
-  border-radius: 999px;
-  cursor: pointer;
-  font: inherit;
+  border: 0; background: none; color: var(--muted);
+  padding: 5px 11px; border-radius: 999px; cursor: pointer; font: inherit;
 }
 .lang button[aria-pressed="true"] { background: var(--sky); color: var(--night); font-weight: 600; }
+.top-cta { min-height: 40px; padding: 0 16px; font-size: .92rem; border-radius: 999px; }
 
 /* ===== Кнопки ===== */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 0 24px;
-  border-radius: 12px;
-  font: 600 1rem var(--font-body);
-  text-decoration: none;
-  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 54px; padding: 0 26px; border-radius: 14px;
+  font: 600 1rem var(--font-body); text-decoration: none; cursor: pointer;
   border: 1px solid transparent;
-  transition: transform .15s ease, background-color .15s ease;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-sun { background: var(--sun); color: var(--on-sun); }
+.btn-sun { background: var(--sun); color: var(--on-sun); box-shadow: 0 8px 28px -10px var(--sun); }
+.btn-sun:hover { box-shadow: 0 14px 36px -10px var(--sun); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--sky); }
 .btn svg { width: 20px; height: 20px; flex: none; }
 
 /* ===== Первый экран ===== */
-.hero { padding-block: 72px 80px; position: relative; overflow: hidden; }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -40% -10% auto auto;
-  width: 640px; height: 640px;
-  max-width: 100%;
-  background: radial-gradient(circle, var(--glow), transparent 65%);
-  pointer-events: none;
+.hero { padding-block: 64px 56px; position: relative; overflow-x: clip; isolation: isolate; }
+.hero::before, .hero::after {
+  content: ""; position: absolute; pointer-events: none; border-radius: 50%; z-index: -1;
 }
+.hero::before { width: 620px; height: 620px; max-width: 90vw; right: -120px; top: -220px; background: radial-gradient(circle, var(--glow), transparent 65%); }
+.hero::after { width: 520px; height: 520px; max-width: 90vw; left: -200px; bottom: -200px; background: radial-gradient(circle, var(--glow-sky), transparent 65%); }
 .hero .wrap {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 56px;
-  align-items: center;
-  position: relative;
+  display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center;
 }
-.hero-text { display: grid; gap: 24px; min-width: 0; }
-.hero h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 700; letter-spacing: -.01em; }
+.hero-text { display: grid; gap: 24px; min-width: 0; justify-items: start; }
+.status {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 14px 7px 10px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--night-2);
+  font-size: .9rem; color: var(--text);
+}
+.status .ava { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+.pulse { width: 9px; height: 9px; border-radius: 50%; background: var(--online); position: relative; flex: none; }
+.pulse::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--online); animation: ping 1.8s ease-out infinite;
+}
+@keyframes ping { from { transform: scale(1); opacity: .7; } to { transform: scale(3); opacity: 0; } }
+
+.hero h1 { font-size: clamp(2.2rem, 5.4vw, 4.1rem); font-weight: 800; letter-spacing: -.02em; }
 .hero h1 .name { color: var(--sun); display: block; }
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(transparent 62%, color-mix(in srgb, var(--sky) 35%, transparent) 62%);
+  padding-inline: .06em;
+}
 .lead { color: var(--muted); font-size: 1.15rem; max-width: 34em; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.chips li {
+  font-family: var(--font-mono); font-size: .8rem;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+.chips li.hot { border-color: var(--sun); color: var(--sun-ink); font-weight: 600; }
 
-.example {
+/* Окно чата */
+.chat {
   background: var(--night-2);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px;
-  display: grid;
-  gap: 18px;
+  border-radius: 24px;
+  overflow: hidden;
   min-width: 0;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .55);
 }
-.chat-head { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .9rem; }
-.chat-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); }
-.bubble {
-  background: var(--bubble);
-  border-radius: 18px 18px 18px 4px;
-  padding: 14px 16px;
-  font-size: 1rem;
-  line-height: 1.5;
+.chat-top { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--night-3); }
+.chat-ava { position: relative; flex: none; }
+.chat-ava img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: block; }
+.chat-ava::after {
+  content: ""; position: absolute; right: -1px; bottom: -1px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--online); border: 2px solid var(--night-3);
 }
-.bubble-time {
-  display: block;
-  text-align: right;
-  font-family: var(--font-mono);
-  font-size: .72rem;
-  color: var(--muted);
-  margin-top: 6px;
+.chat-who { display: grid; line-height: 1.25; min-width: 0; }
+.chat-who strong { font-weight: 600; }
+.chat-who span { font-size: .82rem; color: var(--muted); }
+.chat-body { padding: 18px; display: grid; gap: 10px; }
+.chat-body .label { justify-self: center; font-size: .7rem; padding: 4px 10px; border-radius: 999px; background: var(--night-3); }
+.bubble { max-width: 88%; padding: 11px 14px; font-size: .97rem; line-height: 1.5; }
+.bubble.out { justify-self: end; background: var(--bubble-out); border-radius: 18px 18px 4px 18px; }
+.bubble.in { justify-self: start; background: var(--bubble-in); border-radius: 18px 18px 18px 4px; }
+.bubble time { display: block; text-align: right; font-family: var(--font-mono); font-size: .7rem; color: var(--muted); margin-top: 4px; }
+.typing { justify-self: start; display: flex; gap: 4px; padding: 12px 14px; background: var(--bubble-in); border-radius: 18px 18px 18px 4px; }
+.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: dot 1.2s infinite ease-in-out; }
+.typing i:nth-child(2) { animation-delay: .15s; }
+.typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes dot { 0%, 60%, 100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+
+/* ===== Бегущая строка ===== */
+.ticker {
+  border-block: 1px solid var(--line);
+  background: var(--night-2);
+  overflow: hidden;
+  padding-block: 18px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.next {
-  border-top: 1px dashed var(--line);
-  padding-top: 16px;
-  display: grid;
-  gap: 6px;
+.ticker-track { display: flex; width: max-content; animation: run 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  font-family: var(--font-display); font-weight: 500; font-size: clamp(1rem, 2vw, 1.35rem);
+  white-space: nowrap; padding-inline: 22px; display: inline-flex; align-items: center; gap: 44px;
 }
-.next p { color: var(--muted); font-size: .95rem; }
+.ticker-track span::after { content: "✦"; color: var(--sun); font-size: .8em; }
+@keyframes run { to { transform: translateX(-50%); } }
 
 /* ===== Секции ===== */
-section.block { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-top: 40px; }
-.block-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: 40em; }
-.block h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 700; }
+section.block { padding-block: 88px; scroll-margin-top: 40px; }
+section.block + section.block { border-top: 1px solid var(--line); }
+.block-head { display: grid; gap: 12px; margin-bottom: 40px; max-width: 42em; }
+.block h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.01em; }
 .block-head p { color: var(--muted); }
 
-/* Что такое вайб-кодинг */
-.vibe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.vibe-item { display: grid; gap: 8px; padding-top: 16px; border-top: 2px solid var(--sky); }
-.vibe-item strong { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; }
-.vibe-item p { color: var(--muted); font-size: .98rem; }
-
-/* Услуги */
-.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.service {
-  background: var(--night-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 0;
-}
-.service h3 { font-size: 1.15rem; font-weight: 700; }
-.service p { color: var(--muted); font-size: .95rem; flex: 1; }
-.price {
-  font-family: var(--font-mono);
-  font-size: .9rem;
-  color: var(--muted);
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-}
-.service.main {
-  border: 2px solid var(--sun);
-  box-shadow: 0 0 0 6px var(--glow);
-}
-.price-note { font-family: var(--font-mono); font-size: .8rem; color: var(--sky); margin-top: -4px; }
-.service.main .price {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  font-weight: 600;
-  color: var(--sun-ink);
-  border-top-color: var(--sun);
-  font-variant-numeric: tabular-nums;
-}
-
 /* Мои работы */
-.works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .work {
-  background: var(--night-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  text-decoration: none;
-  color: var(--text);
-  transition: border-color .15s ease, transform .15s ease;
+  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; min-width: 0;
+  text-decoration: none; color: var(--text);
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.work:hover { border-color: var(--sky); transform: translateY(-2px); }
+.work:hover { border-color: var(--sky); transform: translateY(-4px); box-shadow: 0 24px 60px -30px var(--sky); }
 .work-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
+  display: flex; align-items: center; gap: 6px; padding: 10px 14px;
   border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  color: var(--muted);
-  min-width: 0;
+  font-family: var(--font-mono); font-size: .76rem; color: var(--muted); min-width: 0;
 }
 .work-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
 .work-bar span { margin-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.work-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.shot { position: relative; aspect-ratio: 16 / 10; max-width: 100%; overflow: hidden; }
+.poster {
+  position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  letter-spacing: -.01em; padding: 16px;
+}
+.poster small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin-top: 8px; }
+.poster.tau { background: radial-gradient(120% 90% at 70% 20%, var(--tau-b), var(--tau-a) 70%); color: var(--tau-ink); }
+.poster.apex { background: radial-gradient(100% 80% at 30% 80%, var(--apex-b), var(--apex-a) 70%); color: var(--apex-ink); }
+.shot iframe {
+  position: absolute; top: 0; left: 0;
+  width: 1280px; height: 800px; border: 0;
+  transform-origin: 0 0; transform: scale(var(--s, .4));
+  pointer-events: none; opacity: 0; transition: opacity .6s ease;
+}
+.shot iframe.ready { opacity: 1; }
+.work-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .work-name { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
-.work-body p { color: var(--muted); font-size: .95rem; flex: 1; }
-.work-tech { font-family: var(--font-mono); font-size: .8rem; color: var(--sky); }
+.work-body p { color: var(--muted); font-size: .96rem; flex: 1; }
+.work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
+.work-tech { font-family: var(--font-mono); font-size: .78rem; color: var(--sky); }
 .work-open { font-weight: 600; color: var(--sun-ink); }
 
+/* Что такое вайб-кодинг */
+.vibe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.vibe-item { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 2px solid var(--sky); }
+.vibe-item strong { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; }
+.vibe-item p { color: var(--muted); font-size: .98rem; }
+
+/* Услуги плиткой */
+.services { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: auto auto; gap: 16px; }
+.service {
+  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0;
+}
+.service h3 { font-size: 1.15rem; font-weight: 700; }
+.service p { color: var(--muted); font-size: .95rem; flex: 1; }
+.price { font-family: var(--font-mono); font-size: .9rem; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); }
+.price-note { font-family: var(--font-mono); font-size: .78rem; color: var(--sky); margin-top: -4px; }
+.service.main {
+  grid-row: span 2;
+  border: 2px solid var(--sun);
+  box-shadow: 0 0 0 6px var(--glow);
+  background:
+    radial-gradient(120% 70% at 100% 0%, var(--glow), transparent 60%),
+    var(--night-2);
+  padding: 30px;
+}
+.service.main h3 { font-size: 1.6rem; font-weight: 800; }
+.service.main p { font-size: 1.02rem; }
+.service.main .price {
+  font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; font-weight: 600;
+  color: var(--sun-ink); border-top-color: var(--sun);
+  font-variant-numeric: tabular-nums;
+}
+.service.main .price-note { font-size: .85rem; }
+.service.main .btn { margin-top: 8px; }
+
 /* Как я работаю */
-.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
-.steps li { counter-increment: step; display: grid; gap: 12px; align-content: start; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; position: relative; }
+.steps li { counter-increment: step; display: grid; gap: 14px; align-content: start; position: relative; }
 .steps li::before {
   content: counter(step);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.1rem;
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  border-radius: 50%;
-  border: 2px solid var(--sky);
-  color: var(--sky);
+  font-family: var(--font-display); font-weight: 800; font-size: 1.1rem;
+  width: 48px; height: 48px; display: grid; place-items: center;
+  border-radius: 50%; border: 2px solid var(--sky); color: var(--sky);
+  background: var(--night);
+  position: relative; z-index: 1;
 }
-.steps p { color: var(--text); }
+.steps li:not(:last-child)::after {
+  content: ""; position: absolute; top: 24px; left: 56px; right: -12px;
+  border-top: 2px dashed var(--line);
+}
 
 /* Напиши мне */
-.contact h2.big { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; letter-spacing: -.02em; }
+.contact { position: relative; overflow: hidden; isolation: isolate; }
+.contact::before {
+  content: ""; position: absolute; left: 50%; top: 40px; width: 760px; height: 760px; max-width: 100vw;
+  transform: translateX(-50%); border-radius: 50%; z-index: -1;
+  background: radial-gradient(circle, var(--glow), transparent 62%);
+}
+.contact h2.big { font-size: clamp(2.8rem, 9vw, 6rem); font-weight: 800; letter-spacing: -.03em; }
 .contact h2.big span { color: var(--sun); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.contact .lead { margin-top: 18px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
 .channel {
-  background: var(--night-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px;
-  display: grid;
-  gap: 16px;
-  min-width: 0;
+  background: var(--night-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; display: grid; gap: 16px; min-width: 0;
 }
-.channel .btn { width: 100%; }
+.channel .btn { width: 100%; min-height: 60px; font-size: 1.05rem; }
 .copy-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.copy-value {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-variant-numeric: tabular-nums;
-  user-select: all;
-  overflow-wrap: anywhere;
-}
+.copy-value { font-family: var(--font-mono); font-size: 1.1rem; font-variant-numeric: tabular-nums; user-select: all; overflow-wrap: anywhere; }
 .copy-btn {
-  margin-left: auto;
-  border: 1px solid var(--line);
-  background: none;
-  color: var(--sky);
-  border-radius: 8px;
-  padding: 7px 12px;
-  font: 500 .88rem var(--font-body);
-  cursor: pointer;
+  margin-left: auto; border: 1px solid var(--line); background: none; color: var(--sky);
+  border-radius: 10px; padding: 7px 12px; font: 500 .88rem var(--font-body); cursor: pointer;
 }
 .copy-btn:hover { border-color: var(--sky); }
 .copy-note { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
 
 /* Подвал */
 footer { border-top: 1px solid var(--line); padding-block: 28px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted); }
 
+/* Нижняя панель с кнопками на телефоне */
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: none; gap: 10px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--night) 88%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+  transform: translateY(110%); transition: transform .25s ease;
+}
+.dock.show { transform: none; }
+.dock .btn { flex: 1; min-height: 48px; padding: 0 12px; }
+
 /* ===== Появление первого экрана ===== */
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.hero-text > *, .example { animation: rise .6s ease both; }
-.hero-text > :nth-child(2) { animation-delay: .06s; }
-.hero-text > :nth-child(3) { animation-delay: .12s; }
-.hero-text > :nth-child(4) { animation-delay: .18s; }
-.example { animation-delay: .25s; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-text > *, .chat { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-text > :nth-child(2) { animation-delay: .07s; }
+.hero-text > :nth-child(3) { animation-delay: .14s; }
+.hero-text > :nth-child(4) { animation-delay: .21s; }
+.hero-text > :nth-child(5) { animation-delay: .28s; }
+.chat { animation-delay: .3s; }
 
 /* ===== «Уменьшить анимацию» ===== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .btn:hover { transform: none; }
+  .btn:hover, .work:hover { transform: none; }
+  .ticker-track { flex-wrap: wrap; width: auto; justify-content: center; }
+  .ticker-track span[aria-hidden="true"] { display: none; }
 }
 
 /* ===== Планшет ===== */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
-  .services { grid-template-columns: repeat(2, 1fr); }
-  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+  .chat { max-width: 520px; }
+  .services { grid-template-columns: 1fr 1fr; }
+  .service.main { grid-column: 1 / -1; grid-row: auto; }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  .steps li::after { display: none; }
 }
-
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .nav { display: none; }
   .lang { margin-left: auto; }
 }
@@ -374,13 +437,14 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
 /* ===== Телефон ===== */
 @media (max-width: 640px) {
   .wrap { padding-inline: 16px; }
-  .nav { display: none; }
-  .lang { margin-left: auto; }
-  .hero { padding-block: 40px 56px; }
-  section.block { padding-block: 56px; }
-  .actions { flex-direction: column; }
+  .top-cta { display: none; }
+  .hero { padding-block: 36px 48px; }
+  section.block { padding-block: 64px; }
+  .actions { flex-direction: column; width: 100%; }
   .actions .btn { width: 100%; }
   .vibe, .services, .works, .steps, .contact-grid { grid-template-columns: 1fr; }
+  .dock { display: flex; }
+  body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
 </style>
 </head>
@@ -399,6 +463,7 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
       <button type="button" id="lang-ru" data-lang="ru" aria-pressed="true">RU</button>
       <button type="button" id="lang-kk" data-lang="kk" aria-pressed="false">KZ</button>
     </div>
+    <a class="btn btn-sun top-cta" href="#contact" data-i18n="btnWrite">Напиши мне</a>
   </div>
 </header>
 
@@ -408,29 +473,45 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="label" data-i18n="eyebrow">Вайб-кодинг · Казахстан</span>
-        <h1><span class="name">Мансур.</span> <span data-i18n="heroTitle">Делаю сайты, сервисы и игры вместе с ИИ.</span></h1>
+        <span class="status"><img class="ava" src="avatar.jpg" alt="" width="28" height="28"><span class="pulse"></span><span data-i18n="status">Принимаю заказы</span></span>
+        <h1><span class="name">Мансур.</span> <span data-i18n="heroTitle" data-i18n-html>Делаю <em>сайты</em>, сервисы и игры вместе с ИИ.</span></h1>
         <p class="lead" data-i18n="heroLead">Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро и недорого.</p>
         <div class="actions">
           <a class="btn btn-sun" href="#contact" data-i18n="btnWrite">Напиши мне</a>
-          <a class="btn btn-ghost" href="#services" data-i18n="btnServices">Услуги и цены</a>
+          <a class="btn btn-ghost" href="#works" data-i18n="btnWorks">Посмотреть работы</a>
         </div>
+        <ul class="chips">
+          <li class="hot" data-i18n="chip1">Сайт от 15 000 ₸</li>
+          <li data-i18n="chip2">До 5 правок</li>
+          <li data-i18n="chip3">Работает на телефоне</li>
+        </ul>
       </div>
 
-      <aside class="example" aria-labelledby="example-title">
-        <span class="label" id="example-title" data-i18n="exampleTitle">Пример: как написать мне</span>
-        <div class="chat-head"><span class="dot"></span><span data-i18n="exampleFrom">Сообщение клиента</span></div>
-        <div class="bubble">
-          <span data-i18n="exampleMsg">Здравствуйте! Нужен сайт для моей кофейни в Алматы. Хочу тёмный стиль, меню с ценами, пару фото и кнопку WhatsApp внизу.</span>
-          <span class="bubble-time">10:24</span>
+      <aside class="chat" aria-labelledby="example-title">
+        <div class="chat-top">
+          <span class="chat-ava"><img src="avatar.jpg" alt="" width="44" height="44"></span>
+          <span class="chat-who"><strong>Мансур</strong><span data-i18n="chatStatus">вайб-кодер · Казахстан</span></span>
         </div>
-        <div class="next">
-          <span class="label" data-i18n="nextTitle">Что дальше</span>
-          <p data-i18n="nextText">Если нужно, я задам пару вопросов и сделаю первую страницу.</p>
+        <div class="chat-body">
+          <span class="label" id="example-title" data-i18n="exampleTitle">Пример: как написать мне</span>
+          <div class="bubble out">
+            <span data-i18n="exampleMsg">Здравствуйте! Нужен сайт для моей кофейни в Алматы. Хочу тёмный стиль, меню с ценами, пару фото и кнопку WhatsApp внизу.</span>
+            <time>10:24</time>
+          </div>
+          <div class="bubble in">
+            <span data-i18n="replyMsg">Здравствуйте! Если нужно, задам пару вопросов и сделаю первую страницу.</span>
+            <time>10:26</time>
+          </div>
+          <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
       </aside>
     </div>
   </section>
+
+  <!-- Бегущая строка: что можно заказать -->
+  <div class="ticker">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
 
   <!-- Мои работы -->
   <section class="block" id="works">
@@ -443,22 +524,32 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
       <div class="works">
         <a class="work" href="https://sayt-kz.github.io/mountain-coffee-3d/" target="_blank" rel="noopener">
           <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/mountain-coffee-3d</span></div>
+          <div class="shot" data-src="https://sayt-kz.github.io/mountain-coffee-3d/">
+            <div class="poster tau">TAU ROAST<small data-i18n="w1Poster">Кофе с высоты 1 800 м</small></div>
+          </div>
           <div class="work-body">
             <span class="label" data-i18n="w1Type">Демо-сайт для кофейни</span>
             <span class="work-name">TAU ROAST</span>
             <p data-i18n="w1Text">Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.</p>
-            <span class="work-tech">Three.js · GSAP ScrollTrigger</span>
-            <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+            <div class="work-foot">
+              <span class="work-tech">Three.js · GSAP ScrollTrigger</span>
+              <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+            </div>
           </div>
         </a>
         <a class="work" href="https://sayt-kz.github.io/apex-ai-content-hero/" target="_blank" rel="noopener">
           <div class="work-bar" aria-hidden="true"><i></i><i></i><i></i><span>sayt-kz.github.io/apex-ai-content-hero</span></div>
+          <div class="shot" data-src="https://sayt-kz.github.io/apex-ai-content-hero/">
+            <div class="poster apex">APEX<small>AI Content</small></div>
+          </div>
           <div class="work-body">
             <span class="label" data-i18n="w2Type">Первый экран для студии</span>
             <span class="work-name">APEX AI Content</span>
             <p data-i18n="w2Text">Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.</p>
-            <span class="work-tech">Three.js · GSAP</span>
-            <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+            <div class="work-foot">
+              <span class="work-tech">Three.js · GSAP</span>
+              <span class="work-open" data-i18n="workOpen">Открыть сайт ↗</span>
+            </div>
           </div>
         </a>
       </div>
@@ -499,10 +590,12 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
       </div>
       <div class="services">
         <article class="service main">
+          <span class="label" data-i18n="s1Label">Главная услуга</span>
           <h3 data-i18n="s1Title">Сайт</h3>
           <p data-i18n="s1Text">Визитка, портфолио, лендинг для бизнеса. Работает на компьютере и телефоне.</p>
           <div class="price" data-i18n="priceSite">от 15 000 ₸</div>
           <div class="price-note" data-i18n="priceSiteNote">До 5 правок включено</div>
+          <a class="btn btn-sun" id="order-site" href="https://wa.me/77773364268" target="_blank" rel="noopener" data-i18n="btnOrder">Заказать сайт в WhatsApp</a>
         </article>
         <article class="service">
           <h3 data-i18n="s2Title">Сервис</h3>
@@ -519,6 +612,12 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
         <article class="service">
           <h3 data-i18n="s4Title">Другое</h3>
           <p data-i18n="s4Text">Всё, что умеет Claude: тексты, таблицы, автоматизация.</p>
+          <div class="price" data-i18n="priceDeal">по договорённости</div>
+          <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s5Title">Telegram-бот</h3>
+          <p data-i18n="s5Text">Бот для заявок, записи или ответов на частые вопросы.</p>
           <div class="price" data-i18n="priceDeal">по договорённости</div>
           <div class="price-note" data-i18n="priceOtherNote">До 3 правок включено</div>
         </article>
@@ -546,7 +645,7 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
   <section class="block contact" id="contact">
     <div class="wrap">
       <h2 class="big"><span data-i18n="contactTitle">Напиши мне</span><span>.</span></h2>
-      <p class="lead" style="margin-top:16px" data-i18n="contactLead">Опишите идею своими словами, как в примере вверху страницы.</p>
+      <p class="lead" data-i18n="contactLead">Опишите идею своими словами, как в примере вверху страницы. Чай уже заварен, жду ваше сообщение.</p>
 
       <div class="contact-grid">
         <div class="channel">
@@ -581,28 +680,47 @@ footer p { font-family: var(--font-mono); font-size: .82rem; color: var(--muted)
 <footer>
   <div class="wrap">
     <p data-i18n="footer">© 2026 Мансур · Сделано с помощью вайб-кодинга</p>
+    <p>sayt-kz.github.io</p>
   </div>
 </footer>
+
+<!-- Кнопки внизу экрана на телефоне -->
+<div class="dock" id="dock">
+  <a class="btn btn-sun" href="https://wa.me/77773364268" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-ghost" href="https://t.me/arbus33222" target="_blank" rel="noopener">Telegram</a>
+</div>
 
 <script>
 // ===== ТЕКСТЫ: все надписи сайта на двух языках =====
 // Чтобы поменять текст: найдите его ключ в атрибуте data-i18n и поправьте строку в texts.ru и texts.kk.
 const texts = {
   ru: {
-    navServices: "Услуги",
     navWorks: "Работы",
+    navServices: "Услуги",
     navProcess: "Как я работаю",
     navContact: "Связаться",
-    eyebrow: "Вайб-кодинг · Казахстан",
-    heroTitle: "Делаю сайты, сервисы и игры вместе с ИИ.",
+    status: "Принимаю заказы",
+    heroTitle: "Делаю <em>сайты</em>, сервисы и игры вместе с ИИ.",
     heroLead: "Вы описываете идею своими словами, а я превращаю её в рабочий продукт с помощью Claude. Быстро и недорого.",
     btnWrite: "Напиши мне",
-    btnServices: "Услуги и цены",
+    btnWorks: "Посмотреть работы",
+    chip1: "Сайт от 15 000 ₸",
+    chip2: "До 5 правок",
+    chip3: "Работает на телефоне",
+    chatStatus: "вайб-кодер · Казахстан",
     exampleTitle: "Пример: как написать мне",
-    exampleFrom: "Сообщение клиента",
     exampleMsg: "Здравствуйте! Нужен сайт для моей кофейни в Алматы. Хочу тёмный стиль, меню с ценами, пару фото и кнопку WhatsApp внизу.",
-    nextTitle: "Что дальше",
-    nextText: "Если нужно, я задам пару вопросов и сделаю первую страницу.",
+    replyMsg: "Здравствуйте! Если нужно, задам пару вопросов и сделаю первую страницу.",
+    ticker: ["Лендинги", "Сайты-визитки", "Портфолио", "Telegram-боты", "Калькуляторы", "Браузерные игры", "3D-сайты", "Формы заявок"],
+    worksLabel: "Примеры",
+    worksTitle: "Мои работы",
+    worksText: "Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.",
+    w1Poster: "Кофе с высоты 1 800 м",
+    w1Type: "Демо-сайт для кофейни",
+    w1Text: "Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.",
+    w2Type: "Первый экран для студии",
+    w2Text: "Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.",
+    workOpen: "Открыть сайт ↗",
     vibeLabel: "Коротко",
     vibeTitle: "Что такое вайб-кодинг?",
     vibeText: "Код пишет ИИ, а человек им управляет. Поэтому получается быстрее и дешевле, чем в обычной студии.",
@@ -614,6 +732,7 @@ const texts = {
     vibe3Text: "Не нужна команда разработчиков, поэтому и цена ниже.",
     servicesLabel: "Что можно заказать",
     servicesTitle: "Услуги",
+    s1Label: "Главная услуга",
     s1Title: "Сайт",
     s1Text: "Визитка, портфолио, лендинг для бизнеса. Работает на компьютере и телефоне.",
     s2Title: "Сервис",
@@ -622,18 +741,14 @@ const texts = {
     s3Text: "Простые браузерные игры: викторины, аркады, головоломки.",
     s4Title: "Другое",
     s4Text: "Всё, что умеет Claude: тексты, таблицы, автоматизация.",
+    s5Title: "Telegram-бот",
+    s5Text: "Бот для заявок, записи или ответов на частые вопросы.",
     priceDeal: "по договорённости",
     priceSite: "от 15 000 ₸",
     priceSiteNote: "До 5 правок включено",
     priceOtherNote: "До 3 правок включено",
-    worksLabel: "Примеры",
-    worksTitle: "Мои работы",
-    worksText: "Эти сайты я сделал вместе с Claude. Откройте их и посмотрите сами, они работают и на телефоне.",
-    w1Type: "Демо-сайт для кофейни",
-    w1Text: "Лендинг горного кофе из Алматы. Когда листаешь страницу, банка и зёрна оживают в 3D.",
-    w2Type: "Первый экран для студии",
-    w2Text: "Первый экран студии AI-видео и рекламных креативов. Фразы печатаются на экране, а на фоне движется 3D-сцена.",
-    workOpen: "Открыть сайт ↗",
+    btnOrder: "Заказать сайт в WhatsApp",
+    orderText: "Здравствуйте, Мансур! Хочу заказать сайт.",
     processLabel: "Четыре шага",
     processTitle: "Как я работаю",
     step1: "Вы пишете идею в WhatsApp или Telegram.",
@@ -641,7 +756,7 @@ const texts = {
     step3: "Я делаю первую страницу и показываю вам.",
     step4: "Вношу правки: до 5 раз для сайта и до 3 раз для остальных услуг.",
     contactTitle: "Напиши мне",
-    contactLead: "Опишите идею своими словами, как в примере вверху страницы.",
+    contactLead: "Опишите идею своими словами, как в примере вверху страницы. Чай уже заварен, жду ваше сообщение.",
     btnWhatsapp: "Написать в WhatsApp",
     btnTelegram: "Написать в Telegram",
     copy: "Скопировать",
@@ -650,20 +765,32 @@ const texts = {
     footer: "© 2026 Мансур · Сделано с помощью вайб-кодинга"
   },
   kk: {
-    navServices: "Қызметтер",
     navWorks: "Жұмыстар",
+    navServices: "Қызметтер",
     navProcess: "Қалай жұмыс істеймін",
     navContact: "Байланыс",
-    eyebrow: "Вайб-кодинг · Қазақстан",
-    heroTitle: "ЖИ-мен бірге сайттар, сервистер және ойындар жасаймын.",
+    status: "Тапсырыс қабылдаймын",
+    heroTitle: "ЖИ-мен бірге <em>сайттар</em>, сервистер және ойындар жасаймын.",
     heroLead: "Сіз идеяңызды өз сөзіңізбен сипаттайсыз, ал мен оны Claude көмегімен жұмыс істейтін өнімге айналдырамын. Тез әрі қолжетімді.",
     btnWrite: "Маған жаз",
-    btnServices: "Қызметтер мен бағалар",
+    btnWorks: "Жұмыстарды көру",
+    chip1: "Сайт 15 000 ₸ бастап",
+    chip2: "5 түзетуге дейін",
+    chip3: "Телефонда жұмыс істейді",
+    chatStatus: "вайб-кодер · Қазақстан",
     exampleTitle: "Мысал: маған қалай жазу керек",
-    exampleFrom: "Клиенттің хабарламасы",
     exampleMsg: "Сәлеметсіз бе! Алматыдағы кофеханама сайт керек. Қараңғы стиль, бағалары бар мәзір, бірнеше фото және төменде WhatsApp батырмасы болсын.",
-    nextTitle: "Әрі қарай",
-    nextText: "Қажет болса, бірнеше сұрақ қойып, алғашқы бетті жасаймын.",
+    replyMsg: "Сәлеметсіз бе! Қажет болса, бірнеше сұрақ қойып, алғашқы бетті жасаймын.",
+    ticker: ["Лендингтер", "Визитка-сайттар", "Портфолио", "Telegram-боттар", "Калькуляторлар", "Браузерлік ойындар", "3D-сайттар", "Өтінім формалары"],
+    worksLabel: "Мысалдар",
+    worksTitle: "Менің жұмыстарым",
+    worksText: "Бұл сайттарды мен Claude-пен бірге жасадым. Ашып, өзіңіз көріңіз, олар телефонда да жұмыс істейді.",
+    w1Poster: "1 800 м биіктіктен кофе",
+    w1Type: "Кофеханаға арналған демо-сайт",
+    w1Text: "Алматыдағы таулы кофенің лендингі. Бетті айналдырғанда банка мен дәндер 3D-де жанданады.",
+    w2Type: "Студияға арналған бірінші экран",
+    w2Text: "AI-бейне және жарнамалық креативтер студиясының бірінші экраны. Сөз тіркестері экранда басылып шығады, ал артында 3D-сахна қозғалады.",
+    workOpen: "Сайтты ашу ↗",
     vibeLabel: "Қысқаша",
     vibeTitle: "Вайб-кодинг деген не?",
     vibeText: "Кодты ЖИ жазады, ал адам оны басқарады. Сондықтан кәдімгі студияға қарағанда тезірек әрі арзанырақ.",
@@ -675,6 +802,7 @@ const texts = {
     vibe3Text: "Әзірлеушілер командасы қажет емес, сондықтан бағасы да төмен.",
     servicesLabel: "Не тапсырыс беруге болады",
     servicesTitle: "Қызметтер",
+    s1Label: "Негізгі қызмет",
     s1Title: "Сайт",
     s1Text: "Визитка, портфолио, бизнеске арналған лендинг. Компьютерде де, телефонда да жұмыс істейді.",
     s2Title: "Сервис",
@@ -683,18 +811,14 @@ const texts = {
     s3Text: "Қарапайым браузерлік ойындар: викториналар, аркадалар, басқатырғыштар.",
     s4Title: "Басқасы",
     s4Text: "Claude істей алатынның бәрі: мәтіндер, кестелер, автоматтандыру.",
+    s5Title: "Telegram-бот",
+    s5Text: "Өтінім қабылдайтын, жазылуға немесе жиі сұрақтарға жауап беретін бот.",
     priceDeal: "келісім бойынша",
     priceSite: "15 000 ₸ бастап",
     priceSiteNote: "5 түзетуге дейін кіреді",
     priceOtherNote: "3 түзетуге дейін кіреді",
-    worksLabel: "Мысалдар",
-    worksTitle: "Менің жұмыстарым",
-    worksText: "Бұл сайттарды мен Claude-пен бірге жасадым. Ашып, өзіңіз көріңіз, олар телефонда да жұмыс істейді.",
-    w1Type: "Кофеханаға арналған демо-сайт",
-    w1Text: "Алматыдағы таулы кофенің лендингі. Бетті айналдырғанда банка мен дәндер 3D-де жанданады.",
-    w2Type: "Студияға арналған бірінші экран",
-    w2Text: "AI-бейне және жарнамалық креативтер студиясының бірінші экраны. Сөз тіркестері экранда басылып шығады, ал артында 3D-сахна қозғалады.",
-    workOpen: "Сайтты ашу ↗",
+    btnOrder: "WhatsApp арқылы сайтқа тапсырыс беру",
+    orderText: "Сәлеметсіз бе, Мансур! Сайтқа тапсырыс бергім келеді.",
     processLabel: "Төрт қадам",
     processTitle: "Қалай жұмыс істеймін",
     step1: "Сіз идеяңызды WhatsApp немесе Telegram-ға жазасыз.",
@@ -702,7 +826,7 @@ const texts = {
     step3: "Алғашқы бетті жасап, сізге көрсетемін.",
     step4: "Түзетулер енгіземін: сайт үшін 5 ретке дейін, басқа қызметтер үшін 3 ретке дейін.",
     contactTitle: "Маған жаз",
-    contactLead: "Идеяңызды беттің жоғарғы жағындағы мысалдағыдай өз сөзіңізбен сипаттаңыз.",
+    contactLead: "Идеяңызды беттің жоғарғы жағындағы мысалдағыдай өз сөзіңізбен сипаттаңыз. Шай дайын, хабарламаңызды күтемін.",
     btnWhatsapp: "WhatsApp-қа жазу",
     btnTelegram: "Telegram-ға жазу",
     copy: "Көшіру",
@@ -715,18 +839,30 @@ const texts = {
 // ===== Переключение языка =====
 let currentLang = "ru";
 
+function buildTicker(items) {
+  const track = document.getElementById("ticker");
+  const row = items.map(t => "<span>" + t + "</span>").join("");
+  const hidden = items.map(t => '<span aria-hidden="true">' + t + "</span>").join("");
+  track.innerHTML = row + hidden; // вторая копия нужна, чтобы строка бежала без разрыва
+}
+
 function setLang(lang) {
   if (!texts[lang]) lang = "ru";
   currentLang = lang;
+  const t = texts[lang];
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach(el => {
-    const value = texts[lang][el.dataset.i18n];
-    if (value !== undefined) el.textContent = value;
+    const value = t[el.dataset.i18n];
+    if (value === undefined) return;
+    if (el.hasAttribute("data-i18n-html")) el.innerHTML = value;
+    else el.textContent = value;
   });
   document.querySelectorAll(".lang button").forEach(btn => {
     btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
   });
   document.querySelectorAll(".copy-note").forEach(n => { n.textContent = ""; });
+  document.getElementById("order-site").href = "https://wa.me/77773364268?text=" + encodeURIComponent(t.orderText);
+  buildTicker(t.ticker);
   try { localStorage.setItem("lang", lang); } catch (e) {}
 }
 
@@ -773,6 +909,48 @@ document.querySelectorAll("[data-copy]").forEach(btn => {
     }
   });
 });
+
+// ===== Живое превью работ (только на компьютере, когда карточка видна) =====
+(function () {
+  const shots = document.querySelectorAll(".shot[data-src]");
+  const wide = window.matchMedia("(min-width: 861px)").matches;
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!wide || calm || !("IntersectionObserver" in window)) return;
+
+  const fit = shot => shot.style.setProperty("--s", shot.clientWidth / 1280);
+  const ro = "ResizeObserver" in window ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const shot = entry.target;
+      io.unobserve(shot);
+      fit(shot);
+      if (ro) ro.observe(shot);
+      const frame = document.createElement("iframe");
+      frame.src = shot.dataset.src;
+      frame.loading = "lazy";
+      frame.tabIndex = -1;
+      frame.setAttribute("aria-hidden", "true");
+      frame.title = "";
+      frame.addEventListener("load", () => setTimeout(() => frame.classList.add("ready"), 600));
+      shot.appendChild(frame);
+    });
+  }, { rootMargin: "200px" });
+  shots.forEach(s => io.observe(s));
+})();
+
+// ===== Кнопки внизу на телефоне: видны после первого экрана, прячутся у контактов =====
+(function () {
+  const dock = document.getElementById("dock");
+  const hero = document.querySelector(".hero");
+  const contact = document.getElementById("contact");
+  if (!("IntersectionObserver" in window)) { dock.classList.add("show"); return; }
+  let heroVisible = true, contactVisible = false;
+  const update = () => dock.classList.toggle("show", !heroVisible && !contactVisible);
+  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
+  new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
+})();
 </script>
 </body>
 </html>
